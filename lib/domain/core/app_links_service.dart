@@ -3,7 +3,6 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import '../../common/jwt_utils.dart';
 
 part 'app_links_service.freezed.dart';
-
 part 'app_links_service.g.dart';
 
 abstract class AppLinksService {

@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'app_exception.dart';
 
@@ -81,6 +82,17 @@ mixin _$AppException {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult Function(Object? message)? $default, {
+    TResult Function(Object? message)? resourceNotFound,
+    TResult Function(Object? message)? resourceForbidden,
+    TResult Function(Object? message)? resourcePreconditionFailed,
+    TResult Function(Object? message)? resourceAlreadyExists,
+    TResult Function(Object? message)? registerEmailAlreadyInUse,
+    TResult Function(Object? message)? userEmailAlreadyVerified,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function(Object? message)? $default, {
     TResult Function(Object? message)? resourceNotFound,
@@ -105,6 +117,21 @@ mixin _$AppException {
     required TResult Function(RegisterEmailAlreadyInUseExcpetion value)
         registerEmailAlreadyInUse,
     required TResult Function(UserEmailAlreadyVerifiedExcpetion value)
+        userEmailAlreadyVerified,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult Function(_AppException value)? $default, {
+    TResult Function(ResourceNotFoundException value)? resourceNotFound,
+    TResult Function(ResourceForbiddenException value)? resourceForbidden,
+    TResult Function(ResourcePreconditionFailedException value)?
+        resourcePreconditionFailed,
+    TResult Function(ResourceAlreadyExistsException value)?
+        resourceAlreadyExists,
+    TResult Function(RegisterEmailAlreadyInUseExcpetion value)?
+        registerEmailAlreadyInUse,
+    TResult Function(UserEmailAlreadyVerifiedExcpetion value)?
         userEmailAlreadyVerified,
   }) =>
       throw _privateConstructorUsedError;
@@ -187,6 +214,7 @@ class __$AppExceptionCopyWithImpl<$Res> extends _$AppExceptionCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_AppException implements _AppException {
   const _$_AppException([this.message]);
 
@@ -231,6 +259,20 @@ class _$_AppException implements _AppException {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult Function(Object? message)? $default, {
+    TResult Function(Object? message)? resourceNotFound,
+    TResult Function(Object? message)? resourceForbidden,
+    TResult Function(Object? message)? resourcePreconditionFailed,
+    TResult Function(Object? message)? resourceAlreadyExists,
+    TResult Function(Object? message)? registerEmailAlreadyInUse,
+    TResult Function(Object? message)? userEmailAlreadyVerified,
+  }) {
+    return $default?.call(message);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function(Object? message)? $default, {
     TResult Function(Object? message)? resourceNotFound,
@@ -264,6 +306,24 @@ class _$_AppException implements _AppException {
         userEmailAlreadyVerified,
   }) {
     return $default(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult Function(_AppException value)? $default, {
+    TResult Function(ResourceNotFoundException value)? resourceNotFound,
+    TResult Function(ResourceForbiddenException value)? resourceForbidden,
+    TResult Function(ResourcePreconditionFailedException value)?
+        resourcePreconditionFailed,
+    TResult Function(ResourceAlreadyExistsException value)?
+        resourceAlreadyExists,
+    TResult Function(RegisterEmailAlreadyInUseExcpetion value)?
+        registerEmailAlreadyInUse,
+    TResult Function(UserEmailAlreadyVerifiedExcpetion value)?
+        userEmailAlreadyVerified,
+  }) {
+    return $default?.call(this);
   }
 
   @override
@@ -333,6 +393,7 @@ class _$ResourceNotFoundExceptionCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$ResourceNotFoundException implements ResourceNotFoundException {
   const _$ResourceNotFoundException([this.message]);
 
@@ -378,6 +439,20 @@ class _$ResourceNotFoundException implements ResourceNotFoundException {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult Function(Object? message)? $default, {
+    TResult Function(Object? message)? resourceNotFound,
+    TResult Function(Object? message)? resourceForbidden,
+    TResult Function(Object? message)? resourcePreconditionFailed,
+    TResult Function(Object? message)? resourceAlreadyExists,
+    TResult Function(Object? message)? registerEmailAlreadyInUse,
+    TResult Function(Object? message)? userEmailAlreadyVerified,
+  }) {
+    return resourceNotFound?.call(message);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function(Object? message)? $default, {
     TResult Function(Object? message)? resourceNotFound,
@@ -411,6 +486,24 @@ class _$ResourceNotFoundException implements ResourceNotFoundException {
         userEmailAlreadyVerified,
   }) {
     return resourceNotFound(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult Function(_AppException value)? $default, {
+    TResult Function(ResourceNotFoundException value)? resourceNotFound,
+    TResult Function(ResourceForbiddenException value)? resourceForbidden,
+    TResult Function(ResourcePreconditionFailedException value)?
+        resourcePreconditionFailed,
+    TResult Function(ResourceAlreadyExistsException value)?
+        resourceAlreadyExists,
+    TResult Function(RegisterEmailAlreadyInUseExcpetion value)?
+        registerEmailAlreadyInUse,
+    TResult Function(UserEmailAlreadyVerifiedExcpetion value)?
+        userEmailAlreadyVerified,
+  }) {
+    return resourceNotFound?.call(this);
   }
 
   @override
@@ -481,6 +574,7 @@ class _$ResourceForbiddenExceptionCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$ResourceForbiddenException implements ResourceForbiddenException {
   const _$ResourceForbiddenException([this.message]);
 
@@ -527,6 +621,20 @@ class _$ResourceForbiddenException implements ResourceForbiddenException {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult Function(Object? message)? $default, {
+    TResult Function(Object? message)? resourceNotFound,
+    TResult Function(Object? message)? resourceForbidden,
+    TResult Function(Object? message)? resourcePreconditionFailed,
+    TResult Function(Object? message)? resourceAlreadyExists,
+    TResult Function(Object? message)? registerEmailAlreadyInUse,
+    TResult Function(Object? message)? userEmailAlreadyVerified,
+  }) {
+    return resourceForbidden?.call(message);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function(Object? message)? $default, {
     TResult Function(Object? message)? resourceNotFound,
@@ -560,6 +668,24 @@ class _$ResourceForbiddenException implements ResourceForbiddenException {
         userEmailAlreadyVerified,
   }) {
     return resourceForbidden(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult Function(_AppException value)? $default, {
+    TResult Function(ResourceNotFoundException value)? resourceNotFound,
+    TResult Function(ResourceForbiddenException value)? resourceForbidden,
+    TResult Function(ResourcePreconditionFailedException value)?
+        resourcePreconditionFailed,
+    TResult Function(ResourceAlreadyExistsException value)?
+        resourceAlreadyExists,
+    TResult Function(RegisterEmailAlreadyInUseExcpetion value)?
+        registerEmailAlreadyInUse,
+    TResult Function(UserEmailAlreadyVerifiedExcpetion value)?
+        userEmailAlreadyVerified,
+  }) {
+    return resourceForbidden?.call(this);
   }
 
   @override
@@ -632,6 +758,7 @@ class _$ResourcePreconditionFailedExceptionCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$ResourcePreconditionFailedException
     implements ResourcePreconditionFailedException {
   const _$ResourcePreconditionFailedException([this.message]);
@@ -679,6 +806,20 @@ class _$ResourcePreconditionFailedException
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult Function(Object? message)? $default, {
+    TResult Function(Object? message)? resourceNotFound,
+    TResult Function(Object? message)? resourceForbidden,
+    TResult Function(Object? message)? resourcePreconditionFailed,
+    TResult Function(Object? message)? resourceAlreadyExists,
+    TResult Function(Object? message)? registerEmailAlreadyInUse,
+    TResult Function(Object? message)? userEmailAlreadyVerified,
+  }) {
+    return resourcePreconditionFailed?.call(message);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function(Object? message)? $default, {
     TResult Function(Object? message)? resourceNotFound,
@@ -712,6 +853,24 @@ class _$ResourcePreconditionFailedException
         userEmailAlreadyVerified,
   }) {
     return resourcePreconditionFailed(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult Function(_AppException value)? $default, {
+    TResult Function(ResourceNotFoundException value)? resourceNotFound,
+    TResult Function(ResourceForbiddenException value)? resourceForbidden,
+    TResult Function(ResourcePreconditionFailedException value)?
+        resourcePreconditionFailed,
+    TResult Function(ResourceAlreadyExistsException value)?
+        resourceAlreadyExists,
+    TResult Function(RegisterEmailAlreadyInUseExcpetion value)?
+        registerEmailAlreadyInUse,
+    TResult Function(UserEmailAlreadyVerifiedExcpetion value)?
+        userEmailAlreadyVerified,
+  }) {
+    return resourcePreconditionFailed?.call(this);
   }
 
   @override
@@ -785,6 +944,7 @@ class _$ResourceAlreadyExistsExceptionCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$ResourceAlreadyExistsException
     implements ResourceAlreadyExistsException {
   const _$ResourceAlreadyExistsException([this.message]);
@@ -831,6 +991,20 @@ class _$ResourceAlreadyExistsException
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult Function(Object? message)? $default, {
+    TResult Function(Object? message)? resourceNotFound,
+    TResult Function(Object? message)? resourceForbidden,
+    TResult Function(Object? message)? resourcePreconditionFailed,
+    TResult Function(Object? message)? resourceAlreadyExists,
+    TResult Function(Object? message)? registerEmailAlreadyInUse,
+    TResult Function(Object? message)? userEmailAlreadyVerified,
+  }) {
+    return resourceAlreadyExists?.call(message);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function(Object? message)? $default, {
     TResult Function(Object? message)? resourceNotFound,
@@ -864,6 +1038,24 @@ class _$ResourceAlreadyExistsException
         userEmailAlreadyVerified,
   }) {
     return resourceAlreadyExists(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult Function(_AppException value)? $default, {
+    TResult Function(ResourceNotFoundException value)? resourceNotFound,
+    TResult Function(ResourceForbiddenException value)? resourceForbidden,
+    TResult Function(ResourcePreconditionFailedException value)?
+        resourcePreconditionFailed,
+    TResult Function(ResourceAlreadyExistsException value)?
+        resourceAlreadyExists,
+    TResult Function(RegisterEmailAlreadyInUseExcpetion value)?
+        registerEmailAlreadyInUse,
+    TResult Function(UserEmailAlreadyVerifiedExcpetion value)?
+        userEmailAlreadyVerified,
+  }) {
+    return resourceAlreadyExists?.call(this);
   }
 
   @override
@@ -936,6 +1128,7 @@ class _$RegisterEmailAlreadyInUseExcpetionCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$RegisterEmailAlreadyInUseExcpetion
     implements RegisterEmailAlreadyInUseExcpetion {
   const _$RegisterEmailAlreadyInUseExcpetion([this.message]);
@@ -983,6 +1176,20 @@ class _$RegisterEmailAlreadyInUseExcpetion
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult Function(Object? message)? $default, {
+    TResult Function(Object? message)? resourceNotFound,
+    TResult Function(Object? message)? resourceForbidden,
+    TResult Function(Object? message)? resourcePreconditionFailed,
+    TResult Function(Object? message)? resourceAlreadyExists,
+    TResult Function(Object? message)? registerEmailAlreadyInUse,
+    TResult Function(Object? message)? userEmailAlreadyVerified,
+  }) {
+    return registerEmailAlreadyInUse?.call(message);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function(Object? message)? $default, {
     TResult Function(Object? message)? resourceNotFound,
@@ -1016,6 +1223,24 @@ class _$RegisterEmailAlreadyInUseExcpetion
         userEmailAlreadyVerified,
   }) {
     return registerEmailAlreadyInUse(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult Function(_AppException value)? $default, {
+    TResult Function(ResourceNotFoundException value)? resourceNotFound,
+    TResult Function(ResourceForbiddenException value)? resourceForbidden,
+    TResult Function(ResourcePreconditionFailedException value)?
+        resourcePreconditionFailed,
+    TResult Function(ResourceAlreadyExistsException value)?
+        resourceAlreadyExists,
+    TResult Function(RegisterEmailAlreadyInUseExcpetion value)?
+        registerEmailAlreadyInUse,
+    TResult Function(UserEmailAlreadyVerifiedExcpetion value)?
+        userEmailAlreadyVerified,
+  }) {
+    return registerEmailAlreadyInUse?.call(this);
   }
 
   @override
@@ -1089,6 +1314,7 @@ class _$UserEmailAlreadyVerifiedExcpetionCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$UserEmailAlreadyVerifiedExcpetion
     implements UserEmailAlreadyVerifiedExcpetion {
   const _$UserEmailAlreadyVerifiedExcpetion([this.message]);
@@ -1135,6 +1361,20 @@ class _$UserEmailAlreadyVerifiedExcpetion
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult Function(Object? message)? $default, {
+    TResult Function(Object? message)? resourceNotFound,
+    TResult Function(Object? message)? resourceForbidden,
+    TResult Function(Object? message)? resourcePreconditionFailed,
+    TResult Function(Object? message)? resourceAlreadyExists,
+    TResult Function(Object? message)? registerEmailAlreadyInUse,
+    TResult Function(Object? message)? userEmailAlreadyVerified,
+  }) {
+    return userEmailAlreadyVerified?.call(message);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>(
     TResult Function(Object? message)? $default, {
     TResult Function(Object? message)? resourceNotFound,
@@ -1168,6 +1408,24 @@ class _$UserEmailAlreadyVerifiedExcpetion
         userEmailAlreadyVerified,
   }) {
     return userEmailAlreadyVerified(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult Function(_AppException value)? $default, {
+    TResult Function(ResourceNotFoundException value)? resourceNotFound,
+    TResult Function(ResourceForbiddenException value)? resourceForbidden,
+    TResult Function(ResourcePreconditionFailedException value)?
+        resourcePreconditionFailed,
+    TResult Function(ResourceAlreadyExistsException value)?
+        resourceAlreadyExists,
+    TResult Function(RegisterEmailAlreadyInUseExcpetion value)?
+        registerEmailAlreadyInUse,
+    TResult Function(UserEmailAlreadyVerifiedExcpetion value)?
+        userEmailAlreadyVerified,
+  }) {
+    return userEmailAlreadyVerified?.call(this);
   }
 
   @override

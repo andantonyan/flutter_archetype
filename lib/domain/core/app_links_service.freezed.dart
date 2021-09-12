@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'app_links_service.dart';
 
@@ -138,6 +139,7 @@ class __$AppLinkDataCopyWithImpl<$Res> extends _$AppLinkDataCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$_AppLinkData extends _AppLinkData {
   const _$_AppLinkData(this.link, [this.token, this.tokenData]) : super._();
 
@@ -332,9 +334,8 @@ class __$AppLinkTokenDataCopyWithImpl<$Res>
   }
 }
 
-@JsonSerializable()
-
 /// @nodoc
+@JsonSerializable()
 class _$_AppLinkTokenData implements _AppLinkTokenData {
   const _$_AppLinkTokenData(
       {required this.sub,
@@ -343,7 +344,7 @@ class _$_AppLinkTokenData implements _AppLinkTokenData {
       required this.exp});
 
   factory _$_AppLinkTokenData.fromJson(Map<String, dynamic> json) =>
-      _$_$_AppLinkTokenDataFromJson(json);
+      _$$_AppLinkTokenDataFromJson(json);
 
   @override
   final String sub;
@@ -389,7 +390,7 @@ class _$_AppLinkTokenData implements _AppLinkTokenData {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_AppLinkTokenDataToJson(this);
+    return _$$_AppLinkTokenDataToJson(this);
   }
 }
 

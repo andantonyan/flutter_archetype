@@ -6,17 +6,15 @@ part of 'app_links_service.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_AppLinkTokenData _$_$_AppLinkTokenDataFromJson(Map<String, dynamic> json) {
-  return _$_AppLinkTokenData(
-    sub: json['sub'] as String,
-    purpose: _$enumDecode(_$AppLinkTokenPurposeEnumMap, json['purpose']),
-    iat: json['iat'] as int,
-    exp: json['exp'] as int,
-  );
-}
+_$_AppLinkTokenData _$$_AppLinkTokenDataFromJson(Map<String, dynamic> json) =>
+    _$_AppLinkTokenData(
+      sub: json['sub'] as String,
+      purpose: _$enumDecode(_$AppLinkTokenPurposeEnumMap, json['purpose']),
+      iat: json['iat'] as int,
+      exp: json['exp'] as int,
+    );
 
-Map<String, dynamic> _$_$_AppLinkTokenDataToJson(
-        _$_AppLinkTokenData instance) =>
+Map<String, dynamic> _$$_AppLinkTokenDataToJson(_$_AppLinkTokenData instance) =>
     <String, dynamic>{
       'sub': instance.sub,
       'purpose': _$AppLinkTokenPurposeEnumMap[instance.purpose],
@@ -51,6 +49,6 @@ K _$enumDecode<K, V>(
 }
 
 const _$AppLinkTokenPurposeEnumMap = {
-  AppLinkTokenPurpose.EMAIL_VERIFICATION: 'EMAIL_VERIFICATION',
-  AppLinkTokenPurpose.RESET_PASSWORD: 'RESET_PASSWORD',
+  AppLinkTokenPurpose.emailVerification: 'EMAIL_VERIFICATION',
+  AppLinkTokenPurpose.resetPassword: 'RESET_PASSWORD',
 };
