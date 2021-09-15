@@ -2,6 +2,7 @@ import 'package:dartz/dartz.dart';
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
+// ignore: provide_deprecation_message
 @deprecated
 @immutable
 abstract class ValueObject<T> {
@@ -35,9 +36,11 @@ abstract class ValueObject<T> {
   }
 }
 
+// ignore: provide_deprecation_message
 @deprecated
 abstract class ValueFailure<T> {}
 
+// ignore: provide_deprecation_message
 @deprecated
 class EmptyValueFailure<T> implements ValueFailure<T> {
   final T failedValue;

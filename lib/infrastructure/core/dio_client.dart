@@ -1,11 +1,10 @@
 import 'package:dio/dio.dart';
-import 'package:flutter_archetype/common/common.dart';
 import 'package:flutter_archetype/domain/domain.dart';
 import 'package:injectable/injectable.dart';
 
 @singleton
 class DioClient {
-  static const _authTokenHeaderKey = 'x-firebase-token';
+  static const _authTokenHeaderKey = 'firebase-token';
   static const _platformHeaderKey = 'platform';
   static const _versionHeaderKey = 'version';
   static const _deviceHeaderKey = 'device';

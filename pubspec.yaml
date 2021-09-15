@@ -50,6 +50,7 @@ dependencies:
   firebase_crashlytics: ^2.2.1
   firebase_dynamic_links: ^2.0.9
   flutter_platform_widgets: ^1.9.5
+  flutter_bloc: ^7.2.0
   get_it: ^7.2.0
   injectable: ^1.5.0
   url_launcher: ^6.0.3
@@ -69,10 +70,11 @@ dev_dependencies:
   # rules and activating additional ones.
   flutter_lints: ^1.0.4
   build_runner: ^2.1.2
-  json_serializable: ^5.0.0
+  json_serializable: ^5.0.1
   freezed: ^0.14.5
   injectable_generator: ^1.5.2
   retrofit_generator: ^2.0.1+1
+  bloc_test: ^8.1.0
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

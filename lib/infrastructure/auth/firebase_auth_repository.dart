@@ -13,7 +13,7 @@ class FirebaseAuthRepository implements AuthRepository {
 
   @override
   Stream<UserRecord?> get user {
-    return _firebaseAuth.userChanges().map((firebaseUser) => firebaseUser == null ? null : firebaseUser.toUser);
+    return _firebaseAuth.userChanges().map((firebaseUser) => firebaseUser?.toUser);
   }
 
   @override
@@ -60,9 +60,9 @@ class FirebaseAuthRepository implements AuthRepository {
       );
       _logger.fine('Done login user with email and password.');
       return response.user!.toUser;
-    } catch (err, trace) {
+    } on Exception catch (err, trace) {
       _logger.severe('Unable to login user with email and password', err, trace);
-      rethrow;
+      throw err.toApp;
     }
   }
 

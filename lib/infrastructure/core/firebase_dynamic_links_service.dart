@@ -1,9 +1,10 @@
 import 'package:firebase_dynamic_links/firebase_dynamic_links.dart';
+import 'package:flutter_archetype/domain/domain.dart';
 import 'package:injectable/injectable.dart';
 import 'package:logging/logging.dart';
-import 'package:flutter_archetype/domain/domain.dart';
 import 'package:rxdart/rxdart.dart';
 
+import 'app_exception_mapper.dart';
 import 'di.env.dart';
 
 @mobile
@@ -28,7 +29,7 @@ class FirebaseDynamicLinksService implements AppLinksService {
     return AppLinkData(linkData.link, token, tokenData);
   }
 
-  late final _linksService;
+  late final FirebaseDynamicLinks _linksService;
   final _controller = BehaviorSubject<AppLinkData?>();
 
   @override

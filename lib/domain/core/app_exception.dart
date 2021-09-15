@@ -14,7 +14,7 @@ class AppException with _$AppException implements Exception {
 
   const factory AppException.resourceAlreadyExists([Object? message]) = ResourceAlreadyExistsException;
 
-  const factory AppException.registerEmailAlreadyInUse([Object? message]) = RegisterEmailAlreadyInUseExcpetion;
+  const factory AppException.authUserNotFound([Object? message]) = AuthUserNotFoundException;
 
-  const factory AppException.userEmailAlreadyVerified([Object? message]) = UserEmailAlreadyVerifiedExcpetion;
+  const factory AppException.authEmailAlreadyInUse([Object? message]) = AuthEmailAlreadyInUseExcpetion;
 }

@@ -1,6 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-import '../../common/jwt_utils.dart';
+import 'jwt_utils.dart';
 
 part 'app_links_service.freezed.dart';
 part 'app_links_service.g.dart';
@@ -16,8 +16,6 @@ abstract class AppLinksService {
 class AppLinkData with _$AppLinkData {
   bool get isEmailVerification => tokenData?.purpose == AppLinkTokenPurpose.emailVerification;
 
-  bool get isResetPassword => tokenData?.purpose == AppLinkTokenPurpose.resetPassword;
-
   const AppLinkData._();
 
   const factory AppLinkData(
@@ -30,9 +28,6 @@ class AppLinkData with _$AppLinkData {
 enum AppLinkTokenPurpose {
   @JsonValue('EMAIL_VERIFICATION')
   emailVerification,
-
-  @JsonValue('RESET_PASSWORD')
-  resetPassword,
 }
 
 @freezed

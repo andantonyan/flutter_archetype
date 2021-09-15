@@ -48,16 +48,14 @@ class _$AppExceptionTearOff {
     );
   }
 
-  RegisterEmailAlreadyInUseExcpetion registerEmailAlreadyInUse(
-      [Object? message]) {
-    return RegisterEmailAlreadyInUseExcpetion(
+  AuthUserNotFoundException authUserNotFound([Object? message]) {
+    return AuthUserNotFoundException(
       message,
     );
   }
 
-  UserEmailAlreadyVerifiedExcpetion userEmailAlreadyVerified(
-      [Object? message]) {
-    return UserEmailAlreadyVerifiedExcpetion(
+  AuthEmailAlreadyInUseExcpetion authEmailAlreadyInUse([Object? message]) {
+    return AuthEmailAlreadyInUseExcpetion(
       message,
     );
   }
@@ -77,8 +75,8 @@ mixin _$AppException {
     required TResult Function(Object? message) resourceForbidden,
     required TResult Function(Object? message) resourcePreconditionFailed,
     required TResult Function(Object? message) resourceAlreadyExists,
-    required TResult Function(Object? message) registerEmailAlreadyInUse,
-    required TResult Function(Object? message) userEmailAlreadyVerified,
+    required TResult Function(Object? message) authUserNotFound,
+    required TResult Function(Object? message) authEmailAlreadyInUse,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -88,8 +86,8 @@ mixin _$AppException {
     TResult Function(Object? message)? resourceForbidden,
     TResult Function(Object? message)? resourcePreconditionFailed,
     TResult Function(Object? message)? resourceAlreadyExists,
-    TResult Function(Object? message)? registerEmailAlreadyInUse,
-    TResult Function(Object? message)? userEmailAlreadyVerified,
+    TResult Function(Object? message)? authUserNotFound,
+    TResult Function(Object? message)? authEmailAlreadyInUse,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -99,8 +97,8 @@ mixin _$AppException {
     TResult Function(Object? message)? resourceForbidden,
     TResult Function(Object? message)? resourcePreconditionFailed,
     TResult Function(Object? message)? resourceAlreadyExists,
-    TResult Function(Object? message)? registerEmailAlreadyInUse,
-    TResult Function(Object? message)? userEmailAlreadyVerified,
+    TResult Function(Object? message)? authUserNotFound,
+    TResult Function(Object? message)? authEmailAlreadyInUse,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -114,10 +112,9 @@ mixin _$AppException {
         resourcePreconditionFailed,
     required TResult Function(ResourceAlreadyExistsException value)
         resourceAlreadyExists,
-    required TResult Function(RegisterEmailAlreadyInUseExcpetion value)
-        registerEmailAlreadyInUse,
-    required TResult Function(UserEmailAlreadyVerifiedExcpetion value)
-        userEmailAlreadyVerified,
+    required TResult Function(AuthUserNotFoundException value) authUserNotFound,
+    required TResult Function(AuthEmailAlreadyInUseExcpetion value)
+        authEmailAlreadyInUse,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -129,10 +126,9 @@ mixin _$AppException {
         resourcePreconditionFailed,
     TResult Function(ResourceAlreadyExistsException value)?
         resourceAlreadyExists,
-    TResult Function(RegisterEmailAlreadyInUseExcpetion value)?
-        registerEmailAlreadyInUse,
-    TResult Function(UserEmailAlreadyVerifiedExcpetion value)?
-        userEmailAlreadyVerified,
+    TResult Function(AuthUserNotFoundException value)? authUserNotFound,
+    TResult Function(AuthEmailAlreadyInUseExcpetion value)?
+        authEmailAlreadyInUse,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -144,10 +140,9 @@ mixin _$AppException {
         resourcePreconditionFailed,
     TResult Function(ResourceAlreadyExistsException value)?
         resourceAlreadyExists,
-    TResult Function(RegisterEmailAlreadyInUseExcpetion value)?
-        registerEmailAlreadyInUse,
-    TResult Function(UserEmailAlreadyVerifiedExcpetion value)?
-        userEmailAlreadyVerified,
+    TResult Function(AuthUserNotFoundException value)? authUserNotFound,
+    TResult Function(AuthEmailAlreadyInUseExcpetion value)?
+        authEmailAlreadyInUse,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -251,8 +246,8 @@ class _$_AppException implements _AppException {
     required TResult Function(Object? message) resourceForbidden,
     required TResult Function(Object? message) resourcePreconditionFailed,
     required TResult Function(Object? message) resourceAlreadyExists,
-    required TResult Function(Object? message) registerEmailAlreadyInUse,
-    required TResult Function(Object? message) userEmailAlreadyVerified,
+    required TResult Function(Object? message) authUserNotFound,
+    required TResult Function(Object? message) authEmailAlreadyInUse,
   }) {
     return $default(message);
   }
@@ -265,8 +260,8 @@ class _$_AppException implements _AppException {
     TResult Function(Object? message)? resourceForbidden,
     TResult Function(Object? message)? resourcePreconditionFailed,
     TResult Function(Object? message)? resourceAlreadyExists,
-    TResult Function(Object? message)? registerEmailAlreadyInUse,
-    TResult Function(Object? message)? userEmailAlreadyVerified,
+    TResult Function(Object? message)? authUserNotFound,
+    TResult Function(Object? message)? authEmailAlreadyInUse,
   }) {
     return $default?.call(message);
   }
@@ -279,8 +274,8 @@ class _$_AppException implements _AppException {
     TResult Function(Object? message)? resourceForbidden,
     TResult Function(Object? message)? resourcePreconditionFailed,
     TResult Function(Object? message)? resourceAlreadyExists,
-    TResult Function(Object? message)? registerEmailAlreadyInUse,
-    TResult Function(Object? message)? userEmailAlreadyVerified,
+    TResult Function(Object? message)? authUserNotFound,
+    TResult Function(Object? message)? authEmailAlreadyInUse,
     required TResult orElse(),
   }) {
     if ($default != null) {
@@ -300,10 +295,9 @@ class _$_AppException implements _AppException {
         resourcePreconditionFailed,
     required TResult Function(ResourceAlreadyExistsException value)
         resourceAlreadyExists,
-    required TResult Function(RegisterEmailAlreadyInUseExcpetion value)
-        registerEmailAlreadyInUse,
-    required TResult Function(UserEmailAlreadyVerifiedExcpetion value)
-        userEmailAlreadyVerified,
+    required TResult Function(AuthUserNotFoundException value) authUserNotFound,
+    required TResult Function(AuthEmailAlreadyInUseExcpetion value)
+        authEmailAlreadyInUse,
   }) {
     return $default(this);
   }
@@ -318,10 +312,9 @@ class _$_AppException implements _AppException {
         resourcePreconditionFailed,
     TResult Function(ResourceAlreadyExistsException value)?
         resourceAlreadyExists,
-    TResult Function(RegisterEmailAlreadyInUseExcpetion value)?
-        registerEmailAlreadyInUse,
-    TResult Function(UserEmailAlreadyVerifiedExcpetion value)?
-        userEmailAlreadyVerified,
+    TResult Function(AuthUserNotFoundException value)? authUserNotFound,
+    TResult Function(AuthEmailAlreadyInUseExcpetion value)?
+        authEmailAlreadyInUse,
   }) {
     return $default?.call(this);
   }
@@ -336,10 +329,9 @@ class _$_AppException implements _AppException {
         resourcePreconditionFailed,
     TResult Function(ResourceAlreadyExistsException value)?
         resourceAlreadyExists,
-    TResult Function(RegisterEmailAlreadyInUseExcpetion value)?
-        registerEmailAlreadyInUse,
-    TResult Function(UserEmailAlreadyVerifiedExcpetion value)?
-        userEmailAlreadyVerified,
+    TResult Function(AuthUserNotFoundException value)? authUserNotFound,
+    TResult Function(AuthEmailAlreadyInUseExcpetion value)?
+        authEmailAlreadyInUse,
     required TResult orElse(),
   }) {
     if ($default != null) {
@@ -431,8 +423,8 @@ class _$ResourceNotFoundException implements ResourceNotFoundException {
     required TResult Function(Object? message) resourceForbidden,
     required TResult Function(Object? message) resourcePreconditionFailed,
     required TResult Function(Object? message) resourceAlreadyExists,
-    required TResult Function(Object? message) registerEmailAlreadyInUse,
-    required TResult Function(Object? message) userEmailAlreadyVerified,
+    required TResult Function(Object? message) authUserNotFound,
+    required TResult Function(Object? message) authEmailAlreadyInUse,
   }) {
     return resourceNotFound(message);
   }
@@ -445,8 +437,8 @@ class _$ResourceNotFoundException implements ResourceNotFoundException {
     TResult Function(Object? message)? resourceForbidden,
     TResult Function(Object? message)? resourcePreconditionFailed,
     TResult Function(Object? message)? resourceAlreadyExists,
-    TResult Function(Object? message)? registerEmailAlreadyInUse,
-    TResult Function(Object? message)? userEmailAlreadyVerified,
+    TResult Function(Object? message)? authUserNotFound,
+    TResult Function(Object? message)? authEmailAlreadyInUse,
   }) {
     return resourceNotFound?.call(message);
   }
@@ -459,8 +451,8 @@ class _$ResourceNotFoundException implements ResourceNotFoundException {
     TResult Function(Object? message)? resourceForbidden,
     TResult Function(Object? message)? resourcePreconditionFailed,
     TResult Function(Object? message)? resourceAlreadyExists,
-    TResult Function(Object? message)? registerEmailAlreadyInUse,
-    TResult Function(Object? message)? userEmailAlreadyVerified,
+    TResult Function(Object? message)? authUserNotFound,
+    TResult Function(Object? message)? authEmailAlreadyInUse,
     required TResult orElse(),
   }) {
     if (resourceNotFound != null) {
@@ -480,10 +472,9 @@ class _$ResourceNotFoundException implements ResourceNotFoundException {
         resourcePreconditionFailed,
     required TResult Function(ResourceAlreadyExistsException value)
         resourceAlreadyExists,
-    required TResult Function(RegisterEmailAlreadyInUseExcpetion value)
-        registerEmailAlreadyInUse,
-    required TResult Function(UserEmailAlreadyVerifiedExcpetion value)
-        userEmailAlreadyVerified,
+    required TResult Function(AuthUserNotFoundException value) authUserNotFound,
+    required TResult Function(AuthEmailAlreadyInUseExcpetion value)
+        authEmailAlreadyInUse,
   }) {
     return resourceNotFound(this);
   }
@@ -498,10 +489,9 @@ class _$ResourceNotFoundException implements ResourceNotFoundException {
         resourcePreconditionFailed,
     TResult Function(ResourceAlreadyExistsException value)?
         resourceAlreadyExists,
-    TResult Function(RegisterEmailAlreadyInUseExcpetion value)?
-        registerEmailAlreadyInUse,
-    TResult Function(UserEmailAlreadyVerifiedExcpetion value)?
-        userEmailAlreadyVerified,
+    TResult Function(AuthUserNotFoundException value)? authUserNotFound,
+    TResult Function(AuthEmailAlreadyInUseExcpetion value)?
+        authEmailAlreadyInUse,
   }) {
     return resourceNotFound?.call(this);
   }
@@ -516,10 +506,9 @@ class _$ResourceNotFoundException implements ResourceNotFoundException {
         resourcePreconditionFailed,
     TResult Function(ResourceAlreadyExistsException value)?
         resourceAlreadyExists,
-    TResult Function(RegisterEmailAlreadyInUseExcpetion value)?
-        registerEmailAlreadyInUse,
-    TResult Function(UserEmailAlreadyVerifiedExcpetion value)?
-        userEmailAlreadyVerified,
+    TResult Function(AuthUserNotFoundException value)? authUserNotFound,
+    TResult Function(AuthEmailAlreadyInUseExcpetion value)?
+        authEmailAlreadyInUse,
     required TResult orElse(),
   }) {
     if (resourceNotFound != null) {
@@ -613,8 +602,8 @@ class _$ResourceForbiddenException implements ResourceForbiddenException {
     required TResult Function(Object? message) resourceForbidden,
     required TResult Function(Object? message) resourcePreconditionFailed,
     required TResult Function(Object? message) resourceAlreadyExists,
-    required TResult Function(Object? message) registerEmailAlreadyInUse,
-    required TResult Function(Object? message) userEmailAlreadyVerified,
+    required TResult Function(Object? message) authUserNotFound,
+    required TResult Function(Object? message) authEmailAlreadyInUse,
   }) {
     return resourceForbidden(message);
   }
@@ -627,8 +616,8 @@ class _$ResourceForbiddenException implements ResourceForbiddenException {
     TResult Function(Object? message)? resourceForbidden,
     TResult Function(Object? message)? resourcePreconditionFailed,
     TResult Function(Object? message)? resourceAlreadyExists,
-    TResult Function(Object? message)? registerEmailAlreadyInUse,
-    TResult Function(Object? message)? userEmailAlreadyVerified,
+    TResult Function(Object? message)? authUserNotFound,
+    TResult Function(Object? message)? authEmailAlreadyInUse,
   }) {
     return resourceForbidden?.call(message);
   }
@@ -641,8 +630,8 @@ class _$ResourceForbiddenException implements ResourceForbiddenException {
     TResult Function(Object? message)? resourceForbidden,
     TResult Function(Object? message)? resourcePreconditionFailed,
     TResult Function(Object? message)? resourceAlreadyExists,
-    TResult Function(Object? message)? registerEmailAlreadyInUse,
-    TResult Function(Object? message)? userEmailAlreadyVerified,
+    TResult Function(Object? message)? authUserNotFound,
+    TResult Function(Object? message)? authEmailAlreadyInUse,
     required TResult orElse(),
   }) {
     if (resourceForbidden != null) {
@@ -662,10 +651,9 @@ class _$ResourceForbiddenException implements ResourceForbiddenException {
         resourcePreconditionFailed,
     required TResult Function(ResourceAlreadyExistsException value)
         resourceAlreadyExists,
-    required TResult Function(RegisterEmailAlreadyInUseExcpetion value)
-        registerEmailAlreadyInUse,
-    required TResult Function(UserEmailAlreadyVerifiedExcpetion value)
-        userEmailAlreadyVerified,
+    required TResult Function(AuthUserNotFoundException value) authUserNotFound,
+    required TResult Function(AuthEmailAlreadyInUseExcpetion value)
+        authEmailAlreadyInUse,
   }) {
     return resourceForbidden(this);
   }
@@ -680,10 +668,9 @@ class _$ResourceForbiddenException implements ResourceForbiddenException {
         resourcePreconditionFailed,
     TResult Function(ResourceAlreadyExistsException value)?
         resourceAlreadyExists,
-    TResult Function(RegisterEmailAlreadyInUseExcpetion value)?
-        registerEmailAlreadyInUse,
-    TResult Function(UserEmailAlreadyVerifiedExcpetion value)?
-        userEmailAlreadyVerified,
+    TResult Function(AuthUserNotFoundException value)? authUserNotFound,
+    TResult Function(AuthEmailAlreadyInUseExcpetion value)?
+        authEmailAlreadyInUse,
   }) {
     return resourceForbidden?.call(this);
   }
@@ -698,10 +685,9 @@ class _$ResourceForbiddenException implements ResourceForbiddenException {
         resourcePreconditionFailed,
     TResult Function(ResourceAlreadyExistsException value)?
         resourceAlreadyExists,
-    TResult Function(RegisterEmailAlreadyInUseExcpetion value)?
-        registerEmailAlreadyInUse,
-    TResult Function(UserEmailAlreadyVerifiedExcpetion value)?
-        userEmailAlreadyVerified,
+    TResult Function(AuthUserNotFoundException value)? authUserNotFound,
+    TResult Function(AuthEmailAlreadyInUseExcpetion value)?
+        authEmailAlreadyInUse,
     required TResult orElse(),
   }) {
     if (resourceForbidden != null) {
@@ -798,8 +784,8 @@ class _$ResourcePreconditionFailedException
     required TResult Function(Object? message) resourceForbidden,
     required TResult Function(Object? message) resourcePreconditionFailed,
     required TResult Function(Object? message) resourceAlreadyExists,
-    required TResult Function(Object? message) registerEmailAlreadyInUse,
-    required TResult Function(Object? message) userEmailAlreadyVerified,
+    required TResult Function(Object? message) authUserNotFound,
+    required TResult Function(Object? message) authEmailAlreadyInUse,
   }) {
     return resourcePreconditionFailed(message);
   }
@@ -812,8 +798,8 @@ class _$ResourcePreconditionFailedException
     TResult Function(Object? message)? resourceForbidden,
     TResult Function(Object? message)? resourcePreconditionFailed,
     TResult Function(Object? message)? resourceAlreadyExists,
-    TResult Function(Object? message)? registerEmailAlreadyInUse,
-    TResult Function(Object? message)? userEmailAlreadyVerified,
+    TResult Function(Object? message)? authUserNotFound,
+    TResult Function(Object? message)? authEmailAlreadyInUse,
   }) {
     return resourcePreconditionFailed?.call(message);
   }
@@ -826,8 +812,8 @@ class _$ResourcePreconditionFailedException
     TResult Function(Object? message)? resourceForbidden,
     TResult Function(Object? message)? resourcePreconditionFailed,
     TResult Function(Object? message)? resourceAlreadyExists,
-    TResult Function(Object? message)? registerEmailAlreadyInUse,
-    TResult Function(Object? message)? userEmailAlreadyVerified,
+    TResult Function(Object? message)? authUserNotFound,
+    TResult Function(Object? message)? authEmailAlreadyInUse,
     required TResult orElse(),
   }) {
     if (resourcePreconditionFailed != null) {
@@ -847,10 +833,9 @@ class _$ResourcePreconditionFailedException
         resourcePreconditionFailed,
     required TResult Function(ResourceAlreadyExistsException value)
         resourceAlreadyExists,
-    required TResult Function(RegisterEmailAlreadyInUseExcpetion value)
-        registerEmailAlreadyInUse,
-    required TResult Function(UserEmailAlreadyVerifiedExcpetion value)
-        userEmailAlreadyVerified,
+    required TResult Function(AuthUserNotFoundException value) authUserNotFound,
+    required TResult Function(AuthEmailAlreadyInUseExcpetion value)
+        authEmailAlreadyInUse,
   }) {
     return resourcePreconditionFailed(this);
   }
@@ -865,10 +850,9 @@ class _$ResourcePreconditionFailedException
         resourcePreconditionFailed,
     TResult Function(ResourceAlreadyExistsException value)?
         resourceAlreadyExists,
-    TResult Function(RegisterEmailAlreadyInUseExcpetion value)?
-        registerEmailAlreadyInUse,
-    TResult Function(UserEmailAlreadyVerifiedExcpetion value)?
-        userEmailAlreadyVerified,
+    TResult Function(AuthUserNotFoundException value)? authUserNotFound,
+    TResult Function(AuthEmailAlreadyInUseExcpetion value)?
+        authEmailAlreadyInUse,
   }) {
     return resourcePreconditionFailed?.call(this);
   }
@@ -883,10 +867,9 @@ class _$ResourcePreconditionFailedException
         resourcePreconditionFailed,
     TResult Function(ResourceAlreadyExistsException value)?
         resourceAlreadyExists,
-    TResult Function(RegisterEmailAlreadyInUseExcpetion value)?
-        registerEmailAlreadyInUse,
-    TResult Function(UserEmailAlreadyVerifiedExcpetion value)?
-        userEmailAlreadyVerified,
+    TResult Function(AuthUserNotFoundException value)? authUserNotFound,
+    TResult Function(AuthEmailAlreadyInUseExcpetion value)?
+        authEmailAlreadyInUse,
     required TResult orElse(),
   }) {
     if (resourcePreconditionFailed != null) {
@@ -983,8 +966,8 @@ class _$ResourceAlreadyExistsException
     required TResult Function(Object? message) resourceForbidden,
     required TResult Function(Object? message) resourcePreconditionFailed,
     required TResult Function(Object? message) resourceAlreadyExists,
-    required TResult Function(Object? message) registerEmailAlreadyInUse,
-    required TResult Function(Object? message) userEmailAlreadyVerified,
+    required TResult Function(Object? message) authUserNotFound,
+    required TResult Function(Object? message) authEmailAlreadyInUse,
   }) {
     return resourceAlreadyExists(message);
   }
@@ -997,8 +980,8 @@ class _$ResourceAlreadyExistsException
     TResult Function(Object? message)? resourceForbidden,
     TResult Function(Object? message)? resourcePreconditionFailed,
     TResult Function(Object? message)? resourceAlreadyExists,
-    TResult Function(Object? message)? registerEmailAlreadyInUse,
-    TResult Function(Object? message)? userEmailAlreadyVerified,
+    TResult Function(Object? message)? authUserNotFound,
+    TResult Function(Object? message)? authEmailAlreadyInUse,
   }) {
     return resourceAlreadyExists?.call(message);
   }
@@ -1011,8 +994,8 @@ class _$ResourceAlreadyExistsException
     TResult Function(Object? message)? resourceForbidden,
     TResult Function(Object? message)? resourcePreconditionFailed,
     TResult Function(Object? message)? resourceAlreadyExists,
-    TResult Function(Object? message)? registerEmailAlreadyInUse,
-    TResult Function(Object? message)? userEmailAlreadyVerified,
+    TResult Function(Object? message)? authUserNotFound,
+    TResult Function(Object? message)? authEmailAlreadyInUse,
     required TResult orElse(),
   }) {
     if (resourceAlreadyExists != null) {
@@ -1032,10 +1015,9 @@ class _$ResourceAlreadyExistsException
         resourcePreconditionFailed,
     required TResult Function(ResourceAlreadyExistsException value)
         resourceAlreadyExists,
-    required TResult Function(RegisterEmailAlreadyInUseExcpetion value)
-        registerEmailAlreadyInUse,
-    required TResult Function(UserEmailAlreadyVerifiedExcpetion value)
-        userEmailAlreadyVerified,
+    required TResult Function(AuthUserNotFoundException value) authUserNotFound,
+    required TResult Function(AuthEmailAlreadyInUseExcpetion value)
+        authEmailAlreadyInUse,
   }) {
     return resourceAlreadyExists(this);
   }
@@ -1050,10 +1032,9 @@ class _$ResourceAlreadyExistsException
         resourcePreconditionFailed,
     TResult Function(ResourceAlreadyExistsException value)?
         resourceAlreadyExists,
-    TResult Function(RegisterEmailAlreadyInUseExcpetion value)?
-        registerEmailAlreadyInUse,
-    TResult Function(UserEmailAlreadyVerifiedExcpetion value)?
-        userEmailAlreadyVerified,
+    TResult Function(AuthUserNotFoundException value)? authUserNotFound,
+    TResult Function(AuthEmailAlreadyInUseExcpetion value)?
+        authEmailAlreadyInUse,
   }) {
     return resourceAlreadyExists?.call(this);
   }
@@ -1068,10 +1049,9 @@ class _$ResourceAlreadyExistsException
         resourcePreconditionFailed,
     TResult Function(ResourceAlreadyExistsException value)?
         resourceAlreadyExists,
-    TResult Function(RegisterEmailAlreadyInUseExcpetion value)?
-        registerEmailAlreadyInUse,
-    TResult Function(UserEmailAlreadyVerifiedExcpetion value)?
-        userEmailAlreadyVerified,
+    TResult Function(AuthUserNotFoundException value)? authUserNotFound,
+    TResult Function(AuthEmailAlreadyInUseExcpetion value)?
+        authEmailAlreadyInUse,
     required TResult orElse(),
   }) {
     if (resourceAlreadyExists != null) {
@@ -1094,34 +1074,32 @@ abstract class ResourceAlreadyExistsException implements AppException {
 }
 
 /// @nodoc
-abstract class $RegisterEmailAlreadyInUseExcpetionCopyWith<$Res>
+abstract class $AuthUserNotFoundExceptionCopyWith<$Res>
     implements $AppExceptionCopyWith<$Res> {
-  factory $RegisterEmailAlreadyInUseExcpetionCopyWith(
-          RegisterEmailAlreadyInUseExcpetion value,
-          $Res Function(RegisterEmailAlreadyInUseExcpetion) then) =
-      _$RegisterEmailAlreadyInUseExcpetionCopyWithImpl<$Res>;
+  factory $AuthUserNotFoundExceptionCopyWith(AuthUserNotFoundException value,
+          $Res Function(AuthUserNotFoundException) then) =
+      _$AuthUserNotFoundExceptionCopyWithImpl<$Res>;
   @override
   $Res call({Object? message});
 }
 
 /// @nodoc
-class _$RegisterEmailAlreadyInUseExcpetionCopyWithImpl<$Res>
+class _$AuthUserNotFoundExceptionCopyWithImpl<$Res>
     extends _$AppExceptionCopyWithImpl<$Res>
-    implements $RegisterEmailAlreadyInUseExcpetionCopyWith<$Res> {
-  _$RegisterEmailAlreadyInUseExcpetionCopyWithImpl(
-      RegisterEmailAlreadyInUseExcpetion _value,
-      $Res Function(RegisterEmailAlreadyInUseExcpetion) _then)
-      : super(_value, (v) => _then(v as RegisterEmailAlreadyInUseExcpetion));
+    implements $AuthUserNotFoundExceptionCopyWith<$Res> {
+  _$AuthUserNotFoundExceptionCopyWithImpl(AuthUserNotFoundException _value,
+      $Res Function(AuthUserNotFoundException) _then)
+      : super(_value, (v) => _then(v as AuthUserNotFoundException));
 
   @override
-  RegisterEmailAlreadyInUseExcpetion get _value =>
-      super._value as RegisterEmailAlreadyInUseExcpetion;
+  AuthUserNotFoundException get _value =>
+      super._value as AuthUserNotFoundException;
 
   @override
   $Res call({
     Object? message = freezed,
   }) {
-    return _then(RegisterEmailAlreadyInUseExcpetion(
+    return _then(AuthUserNotFoundException(
       message == freezed ? _value.message : message,
     ));
   }
@@ -1129,22 +1107,21 @@ class _$RegisterEmailAlreadyInUseExcpetionCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$RegisterEmailAlreadyInUseExcpetion
-    implements RegisterEmailAlreadyInUseExcpetion {
-  const _$RegisterEmailAlreadyInUseExcpetion([this.message]);
+class _$AuthUserNotFoundException implements AuthUserNotFoundException {
+  const _$AuthUserNotFoundException([this.message]);
 
   @override
   final Object? message;
 
   @override
   String toString() {
-    return 'AppException.registerEmailAlreadyInUse(message: $message)';
+    return 'AppException.authUserNotFound(message: $message)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is RegisterEmailAlreadyInUseExcpetion &&
+        (other is AuthUserNotFoundException &&
             (identical(other.message, message) ||
                 const DeepCollectionEquality().equals(other.message, message)));
   }
@@ -1155,10 +1132,9 @@ class _$RegisterEmailAlreadyInUseExcpetion
 
   @JsonKey(ignore: true)
   @override
-  $RegisterEmailAlreadyInUseExcpetionCopyWith<
-          RegisterEmailAlreadyInUseExcpetion>
-      get copyWith => _$RegisterEmailAlreadyInUseExcpetionCopyWithImpl<
-          RegisterEmailAlreadyInUseExcpetion>(this, _$identity);
+  $AuthUserNotFoundExceptionCopyWith<AuthUserNotFoundException> get copyWith =>
+      _$AuthUserNotFoundExceptionCopyWithImpl<AuthUserNotFoundException>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1168,10 +1144,10 @@ class _$RegisterEmailAlreadyInUseExcpetion
     required TResult Function(Object? message) resourceForbidden,
     required TResult Function(Object? message) resourcePreconditionFailed,
     required TResult Function(Object? message) resourceAlreadyExists,
-    required TResult Function(Object? message) registerEmailAlreadyInUse,
-    required TResult Function(Object? message) userEmailAlreadyVerified,
+    required TResult Function(Object? message) authUserNotFound,
+    required TResult Function(Object? message) authEmailAlreadyInUse,
   }) {
-    return registerEmailAlreadyInUse(message);
+    return authUserNotFound(message);
   }
 
   @override
@@ -1182,10 +1158,10 @@ class _$RegisterEmailAlreadyInUseExcpetion
     TResult Function(Object? message)? resourceForbidden,
     TResult Function(Object? message)? resourcePreconditionFailed,
     TResult Function(Object? message)? resourceAlreadyExists,
-    TResult Function(Object? message)? registerEmailAlreadyInUse,
-    TResult Function(Object? message)? userEmailAlreadyVerified,
+    TResult Function(Object? message)? authUserNotFound,
+    TResult Function(Object? message)? authEmailAlreadyInUse,
   }) {
-    return registerEmailAlreadyInUse?.call(message);
+    return authUserNotFound?.call(message);
   }
 
   @override
@@ -1196,12 +1172,12 @@ class _$RegisterEmailAlreadyInUseExcpetion
     TResult Function(Object? message)? resourceForbidden,
     TResult Function(Object? message)? resourcePreconditionFailed,
     TResult Function(Object? message)? resourceAlreadyExists,
-    TResult Function(Object? message)? registerEmailAlreadyInUse,
-    TResult Function(Object? message)? userEmailAlreadyVerified,
+    TResult Function(Object? message)? authUserNotFound,
+    TResult Function(Object? message)? authEmailAlreadyInUse,
     required TResult orElse(),
   }) {
-    if (registerEmailAlreadyInUse != null) {
-      return registerEmailAlreadyInUse(message);
+    if (authUserNotFound != null) {
+      return authUserNotFound(message);
     }
     return orElse();
   }
@@ -1217,12 +1193,11 @@ class _$RegisterEmailAlreadyInUseExcpetion
         resourcePreconditionFailed,
     required TResult Function(ResourceAlreadyExistsException value)
         resourceAlreadyExists,
-    required TResult Function(RegisterEmailAlreadyInUseExcpetion value)
-        registerEmailAlreadyInUse,
-    required TResult Function(UserEmailAlreadyVerifiedExcpetion value)
-        userEmailAlreadyVerified,
+    required TResult Function(AuthUserNotFoundException value) authUserNotFound,
+    required TResult Function(AuthEmailAlreadyInUseExcpetion value)
+        authEmailAlreadyInUse,
   }) {
-    return registerEmailAlreadyInUse(this);
+    return authUserNotFound(this);
   }
 
   @override
@@ -1235,12 +1210,11 @@ class _$RegisterEmailAlreadyInUseExcpetion
         resourcePreconditionFailed,
     TResult Function(ResourceAlreadyExistsException value)?
         resourceAlreadyExists,
-    TResult Function(RegisterEmailAlreadyInUseExcpetion value)?
-        registerEmailAlreadyInUse,
-    TResult Function(UserEmailAlreadyVerifiedExcpetion value)?
-        userEmailAlreadyVerified,
+    TResult Function(AuthUserNotFoundException value)? authUserNotFound,
+    TResult Function(AuthEmailAlreadyInUseExcpetion value)?
+        authEmailAlreadyInUse,
   }) {
-    return registerEmailAlreadyInUse?.call(this);
+    return authUserNotFound?.call(this);
   }
 
   @override
@@ -1253,61 +1227,59 @@ class _$RegisterEmailAlreadyInUseExcpetion
         resourcePreconditionFailed,
     TResult Function(ResourceAlreadyExistsException value)?
         resourceAlreadyExists,
-    TResult Function(RegisterEmailAlreadyInUseExcpetion value)?
-        registerEmailAlreadyInUse,
-    TResult Function(UserEmailAlreadyVerifiedExcpetion value)?
-        userEmailAlreadyVerified,
+    TResult Function(AuthUserNotFoundException value)? authUserNotFound,
+    TResult Function(AuthEmailAlreadyInUseExcpetion value)?
+        authEmailAlreadyInUse,
     required TResult orElse(),
   }) {
-    if (registerEmailAlreadyInUse != null) {
-      return registerEmailAlreadyInUse(this);
+    if (authUserNotFound != null) {
+      return authUserNotFound(this);
     }
     return orElse();
   }
 }
 
-abstract class RegisterEmailAlreadyInUseExcpetion implements AppException {
-  const factory RegisterEmailAlreadyInUseExcpetion([Object? message]) =
-      _$RegisterEmailAlreadyInUseExcpetion;
+abstract class AuthUserNotFoundException implements AppException {
+  const factory AuthUserNotFoundException([Object? message]) =
+      _$AuthUserNotFoundException;
 
   @override
   Object? get message => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  $RegisterEmailAlreadyInUseExcpetionCopyWith<
-          RegisterEmailAlreadyInUseExcpetion>
-      get copyWith => throw _privateConstructorUsedError;
+  $AuthUserNotFoundExceptionCopyWith<AuthUserNotFoundException> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $UserEmailAlreadyVerifiedExcpetionCopyWith<$Res>
+abstract class $AuthEmailAlreadyInUseExcpetionCopyWith<$Res>
     implements $AppExceptionCopyWith<$Res> {
-  factory $UserEmailAlreadyVerifiedExcpetionCopyWith(
-          UserEmailAlreadyVerifiedExcpetion value,
-          $Res Function(UserEmailAlreadyVerifiedExcpetion) then) =
-      _$UserEmailAlreadyVerifiedExcpetionCopyWithImpl<$Res>;
+  factory $AuthEmailAlreadyInUseExcpetionCopyWith(
+          AuthEmailAlreadyInUseExcpetion value,
+          $Res Function(AuthEmailAlreadyInUseExcpetion) then) =
+      _$AuthEmailAlreadyInUseExcpetionCopyWithImpl<$Res>;
   @override
   $Res call({Object? message});
 }
 
 /// @nodoc
-class _$UserEmailAlreadyVerifiedExcpetionCopyWithImpl<$Res>
+class _$AuthEmailAlreadyInUseExcpetionCopyWithImpl<$Res>
     extends _$AppExceptionCopyWithImpl<$Res>
-    implements $UserEmailAlreadyVerifiedExcpetionCopyWith<$Res> {
-  _$UserEmailAlreadyVerifiedExcpetionCopyWithImpl(
-      UserEmailAlreadyVerifiedExcpetion _value,
-      $Res Function(UserEmailAlreadyVerifiedExcpetion) _then)
-      : super(_value, (v) => _then(v as UserEmailAlreadyVerifiedExcpetion));
+    implements $AuthEmailAlreadyInUseExcpetionCopyWith<$Res> {
+  _$AuthEmailAlreadyInUseExcpetionCopyWithImpl(
+      AuthEmailAlreadyInUseExcpetion _value,
+      $Res Function(AuthEmailAlreadyInUseExcpetion) _then)
+      : super(_value, (v) => _then(v as AuthEmailAlreadyInUseExcpetion));
 
   @override
-  UserEmailAlreadyVerifiedExcpetion get _value =>
-      super._value as UserEmailAlreadyVerifiedExcpetion;
+  AuthEmailAlreadyInUseExcpetion get _value =>
+      super._value as AuthEmailAlreadyInUseExcpetion;
 
   @override
   $Res call({
     Object? message = freezed,
   }) {
-    return _then(UserEmailAlreadyVerifiedExcpetion(
+    return _then(AuthEmailAlreadyInUseExcpetion(
       message == freezed ? _value.message : message,
     ));
   }
@@ -1315,22 +1287,22 @@ class _$UserEmailAlreadyVerifiedExcpetionCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$UserEmailAlreadyVerifiedExcpetion
-    implements UserEmailAlreadyVerifiedExcpetion {
-  const _$UserEmailAlreadyVerifiedExcpetion([this.message]);
+class _$AuthEmailAlreadyInUseExcpetion
+    implements AuthEmailAlreadyInUseExcpetion {
+  const _$AuthEmailAlreadyInUseExcpetion([this.message]);
 
   @override
   final Object? message;
 
   @override
   String toString() {
-    return 'AppException.userEmailAlreadyVerified(message: $message)';
+    return 'AppException.authEmailAlreadyInUse(message: $message)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is UserEmailAlreadyVerifiedExcpetion &&
+        (other is AuthEmailAlreadyInUseExcpetion &&
             (identical(other.message, message) ||
                 const DeepCollectionEquality().equals(other.message, message)));
   }
@@ -1341,9 +1313,9 @@ class _$UserEmailAlreadyVerifiedExcpetion
 
   @JsonKey(ignore: true)
   @override
-  $UserEmailAlreadyVerifiedExcpetionCopyWith<UserEmailAlreadyVerifiedExcpetion>
-      get copyWith => _$UserEmailAlreadyVerifiedExcpetionCopyWithImpl<
-          UserEmailAlreadyVerifiedExcpetion>(this, _$identity);
+  $AuthEmailAlreadyInUseExcpetionCopyWith<AuthEmailAlreadyInUseExcpetion>
+      get copyWith => _$AuthEmailAlreadyInUseExcpetionCopyWithImpl<
+          AuthEmailAlreadyInUseExcpetion>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -1353,10 +1325,10 @@ class _$UserEmailAlreadyVerifiedExcpetion
     required TResult Function(Object? message) resourceForbidden,
     required TResult Function(Object? message) resourcePreconditionFailed,
     required TResult Function(Object? message) resourceAlreadyExists,
-    required TResult Function(Object? message) registerEmailAlreadyInUse,
-    required TResult Function(Object? message) userEmailAlreadyVerified,
+    required TResult Function(Object? message) authUserNotFound,
+    required TResult Function(Object? message) authEmailAlreadyInUse,
   }) {
-    return userEmailAlreadyVerified(message);
+    return authEmailAlreadyInUse(message);
   }
 
   @override
@@ -1367,10 +1339,10 @@ class _$UserEmailAlreadyVerifiedExcpetion
     TResult Function(Object? message)? resourceForbidden,
     TResult Function(Object? message)? resourcePreconditionFailed,
     TResult Function(Object? message)? resourceAlreadyExists,
-    TResult Function(Object? message)? registerEmailAlreadyInUse,
-    TResult Function(Object? message)? userEmailAlreadyVerified,
+    TResult Function(Object? message)? authUserNotFound,
+    TResult Function(Object? message)? authEmailAlreadyInUse,
   }) {
-    return userEmailAlreadyVerified?.call(message);
+    return authEmailAlreadyInUse?.call(message);
   }
 
   @override
@@ -1381,12 +1353,12 @@ class _$UserEmailAlreadyVerifiedExcpetion
     TResult Function(Object? message)? resourceForbidden,
     TResult Function(Object? message)? resourcePreconditionFailed,
     TResult Function(Object? message)? resourceAlreadyExists,
-    TResult Function(Object? message)? registerEmailAlreadyInUse,
-    TResult Function(Object? message)? userEmailAlreadyVerified,
+    TResult Function(Object? message)? authUserNotFound,
+    TResult Function(Object? message)? authEmailAlreadyInUse,
     required TResult orElse(),
   }) {
-    if (userEmailAlreadyVerified != null) {
-      return userEmailAlreadyVerified(message);
+    if (authEmailAlreadyInUse != null) {
+      return authEmailAlreadyInUse(message);
     }
     return orElse();
   }
@@ -1402,12 +1374,11 @@ class _$UserEmailAlreadyVerifiedExcpetion
         resourcePreconditionFailed,
     required TResult Function(ResourceAlreadyExistsException value)
         resourceAlreadyExists,
-    required TResult Function(RegisterEmailAlreadyInUseExcpetion value)
-        registerEmailAlreadyInUse,
-    required TResult Function(UserEmailAlreadyVerifiedExcpetion value)
-        userEmailAlreadyVerified,
+    required TResult Function(AuthUserNotFoundException value) authUserNotFound,
+    required TResult Function(AuthEmailAlreadyInUseExcpetion value)
+        authEmailAlreadyInUse,
   }) {
-    return userEmailAlreadyVerified(this);
+    return authEmailAlreadyInUse(this);
   }
 
   @override
@@ -1420,12 +1391,11 @@ class _$UserEmailAlreadyVerifiedExcpetion
         resourcePreconditionFailed,
     TResult Function(ResourceAlreadyExistsException value)?
         resourceAlreadyExists,
-    TResult Function(RegisterEmailAlreadyInUseExcpetion value)?
-        registerEmailAlreadyInUse,
-    TResult Function(UserEmailAlreadyVerifiedExcpetion value)?
-        userEmailAlreadyVerified,
+    TResult Function(AuthUserNotFoundException value)? authUserNotFound,
+    TResult Function(AuthEmailAlreadyInUseExcpetion value)?
+        authEmailAlreadyInUse,
   }) {
-    return userEmailAlreadyVerified?.call(this);
+    return authEmailAlreadyInUse?.call(this);
   }
 
   @override
@@ -1438,27 +1408,26 @@ class _$UserEmailAlreadyVerifiedExcpetion
         resourcePreconditionFailed,
     TResult Function(ResourceAlreadyExistsException value)?
         resourceAlreadyExists,
-    TResult Function(RegisterEmailAlreadyInUseExcpetion value)?
-        registerEmailAlreadyInUse,
-    TResult Function(UserEmailAlreadyVerifiedExcpetion value)?
-        userEmailAlreadyVerified,
+    TResult Function(AuthUserNotFoundException value)? authUserNotFound,
+    TResult Function(AuthEmailAlreadyInUseExcpetion value)?
+        authEmailAlreadyInUse,
     required TResult orElse(),
   }) {
-    if (userEmailAlreadyVerified != null) {
-      return userEmailAlreadyVerified(this);
+    if (authEmailAlreadyInUse != null) {
+      return authEmailAlreadyInUse(this);
     }
     return orElse();
   }
 }
 
-abstract class UserEmailAlreadyVerifiedExcpetion implements AppException {
-  const factory UserEmailAlreadyVerifiedExcpetion([Object? message]) =
-      _$UserEmailAlreadyVerifiedExcpetion;
+abstract class AuthEmailAlreadyInUseExcpetion implements AppException {
+  const factory AuthEmailAlreadyInUseExcpetion([Object? message]) =
+      _$AuthEmailAlreadyInUseExcpetion;
 
   @override
   Object? get message => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  $UserEmailAlreadyVerifiedExcpetionCopyWith<UserEmailAlreadyVerifiedExcpetion>
+  $AuthEmailAlreadyInUseExcpetionCopyWith<AuthEmailAlreadyInUseExcpetion>
       get copyWith => throw _privateConstructorUsedError;
 }

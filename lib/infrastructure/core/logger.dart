@@ -23,7 +23,7 @@ StringBuffer _colorLog(LogRecord record) {
 
   final String? loggerName = pen('${record.loggerName} --');
   final String? level = pen('[${record.level}]');
-  final eraseLine = '\x1b[2K\r';
+  const eraseLine = '\x1b[2K\r';
   var lines = <Object?>['$eraseLine$loggerName $level ${_recordHeader(record)}${record.message}'];
 
   if (record.error != null) {
@@ -45,6 +45,7 @@ StringBuffer _colorLog(LogRecord record) {
   return message;
 }
 
+// ignore: avoid_print
 void _stdIOLogListener(LogRecord record) => print(_colorLog(record));
 
 String _recordHeader(LogRecord record) {

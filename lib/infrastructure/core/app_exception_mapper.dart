@@ -5,10 +5,6 @@ import 'package:firebase_auth/firebase_auth.dart' as firebase_auth;
 import 'package:flutter_archetype/domain/domain.dart';
 
 extension AppExceptionMapper on Exception {
-  static final RegExp _firebaseEmailVerifiedExp = RegExp(
-    r"""FirebaseUser with email:'.+' is already verified""",
-  );
-
   Exception get toApp {
     var appException = AppException(toString());
 
@@ -23,20 +19,17 @@ extension AppExceptionMapper on Exception {
           appException = AppException.resourceForbidden(self.message);
           break;
 
-        case HttpStatus.preconditionFailed:
-          var message = self.response?.data['message'] ?? '';
-          appException = message.contains(_firebaseEmailVerifiedExp)
-              ? AppException.userEmailAlreadyVerified(self.message)
-              : AppException.resourceForbidden(self.message);
-          break;
-
         default:
       }
     } else if (this is firebase_auth.FirebaseAuthException) {
       var self = this as firebase_auth.FirebaseAuthException;
       switch (self.code) {
         case 'email-already-in-use':
-          appException = AppException.registerEmailAlreadyInUse(self.message);
+          appException = AppException.authEmailAlreadyInUse(self.message);
+          break;
+
+        case 'user-not-found':
+          appException = AppException.authUserNotFound(self.message);
           break;
 
         default:

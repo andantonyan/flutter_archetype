@@ -50,5 +50,4 @@ K _$enumDecode<K, V>(
 
 const _$AppLinkTokenPurposeEnumMap = {
   AppLinkTokenPurpose.emailVerification: 'EMAIL_VERIFICATION',
-  AppLinkTokenPurpose.resetPassword: 'RESET_PASSWORD',
 };

@@ -12,8 +12,8 @@ import 'di.env.dart';
 @mobile
 @LazySingleton(as: StorageService)
 class SecureStorageServiceImpl implements StorageService {
-  static const _storage = const FlutterSecureStorage();
-  static const _defaultLocale = const Locale('en');
+  static const _storage = FlutterSecureStorage();
+  static const _defaultLocale = Locale('en');
   static const _introScreenStorageKey = 'is_intro_screen_disabled';
   static const _authTokenStorageKey = 'auth_token';
   static const _selectedLocaleStorageKey = 'selected_locale';
