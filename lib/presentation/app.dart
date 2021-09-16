@@ -26,6 +26,12 @@ class App extends StatelessWidget {
         BlocProvider<AppLinksCubit>(
           create: (_) => getIt(),
         ),
+        BlocProvider<NavigationCubit>(
+          create: (context) => getIt()
+            ..appLinksCubit = context.read<AppLinksCubit>()
+            ..authCubit = context.read<AuthCubit>()
+            ..init(),
+        ),
       ],
       child: _AppView(),
     );
@@ -67,8 +73,8 @@ class __AppViewState extends State<_AppView> {
             ],
             builder: (context, child) {
               return KeyboardHider(
-                child: BlocListener<AuthCubit, AuthState>(
-                  listener: _authListener,
+                child: BlocListener<NavigationCubit, NavigationState>(
+                  listener: _navigationListener,
                   child: child,
                 ),
               );
@@ -80,11 +86,15 @@ class __AppViewState extends State<_AppView> {
     );
   }
 
-  void _authListener(BuildContext context, AuthState state) {
+  void _navigationListener(BuildContext context, NavigationState state) {
     var route = state.maybeWhen<Route>(
       loading: () => LoadingPage.route(),
-      unauthenticated: () => LoginPage.route(),
-      authenticated: (userRecord) => HomePage.route(),
+      home: () => HomePage.route(),
+      login: (String? email, bool readOnlyEmail) => LoginPage.route(
+        email: email,
+        readOnlyEmail: readOnlyEmail,
+      ),
+      verifyEmail: (String? token, String? email) => VerifyEmailPage.route(),
       orElse: () => SplashPage.route(),
     );
 
