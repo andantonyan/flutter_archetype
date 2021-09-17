@@ -20,7 +20,7 @@ void main() {
 
       when(mockFirebaseAuth.currentUser).thenAnswer((_) => mockUser);
 
-      authRepository = FirebaseAuthRepository(firebaseAuth: mockFirebaseAuth);
+      authRepository = FirebaseAuthRepository(mockFirebaseAuth);
     });
 
     group('user', () {

@@ -8,11 +8,7 @@ import 'di.env.dart';
 
 final getIt = GetIt.instance;
 
-@InjectableInit(
-  initializerName: r'$initGetIt',
-  preferRelativeImports: true,
-  asExtension: false,
-)
+@InjectableInit()
 Future<void> configureDependencies() async {
   $initGetIt(getIt, environment: kIsWeb ? web.name : mobile.name);
 

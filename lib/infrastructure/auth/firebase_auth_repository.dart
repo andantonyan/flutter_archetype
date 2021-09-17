@@ -11,8 +11,7 @@ class FirebaseAuthRepository implements AuthRepository {
 
   final firebase_auth.FirebaseAuth _firebaseAuth;
 
-  FirebaseAuthRepository({firebase_auth.FirebaseAuth? firebaseAuth})
-      : _firebaseAuth = firebaseAuth ?? firebase_auth.FirebaseAuth.instance;
+  const FirebaseAuthRepository(this._firebaseAuth);
 
   @override
   Stream<User?> get user {
@@ -27,7 +26,7 @@ class FirebaseAuthRepository implements AuthRepository {
       _logger.fine('Done getting auth token.');
 
       return token;
-    }  on Exception catch (err, trace) {
+    } on Exception catch (err, trace) {
       _logger.severe('Unable to get auth token', err, trace);
       throw err.toApp;
     }
