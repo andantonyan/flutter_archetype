@@ -75,6 +75,7 @@ dev_dependencies:
   injectable_generator: ^1.5.2
   retrofit_generator: ^2.0.1+1
   bloc_test: ^8.1.0
+  mockito: ^5.0.16
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

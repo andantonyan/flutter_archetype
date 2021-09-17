@@ -1,13 +1,13 @@
-import 'user_record.dart';
+import 'user.dart';
 
 abstract class AuthRepository {
-  Stream<UserRecord?> get user;
+  Stream<User?> get user;
 
-  Future<String> getToken([bool? forceRefresh]);
+  Future<String> getToken([bool forceRefresh]);
 
-  Future<UserRecord> loginWithEmailAndPassword(String email, String password);
+  Future<User> loginWithEmailAndPassword(String email, String password);
 
-  Future<UserRecord> registerWithEmailAndPassword(
+  Future<User> registerWithEmailAndPassword(
     String email,
     String password,
   );

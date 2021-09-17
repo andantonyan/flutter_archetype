@@ -8,7 +8,7 @@ class AuthState with _$AuthState {
 
   bool get isLoading => maybeMap(loading: (_) => true, orElse: () => false);
 
-  UserRecord? get userRecord => maybeMap(authenticated: (state) => state.userRecord, orElse: () => null);
+  User? get user => maybeMap(authenticated: (state) => state.user, orElse: () => null);
 
   const AuthState._();
 
@@ -16,7 +16,7 @@ class AuthState with _$AuthState {
 
   const factory AuthState.loading() = _Loading;
 
-  const factory AuthState.authenticated({required UserRecord userRecord}) = _Authenticated;
+  const factory AuthState.authenticated({required User user}) = _Authenticated;
 
   const factory AuthState.unauthenticated() = _Unauthenticated;
 }

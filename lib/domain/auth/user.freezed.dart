@@ -2,7 +2,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
-part of 'user_record.dart';
+part of 'user.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -13,71 +13,69 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-UserRecord _$UserRecordFromJson(Map<String, dynamic> json) {
-  return _UserRecord.fromJson(json);
+User _$UserFromJson(Map<String, dynamic> json) {
+  return _User.fromJson(json);
 }
 
 /// @nodoc
-class _$UserRecordTearOff {
-  const _$UserRecordTearOff();
+class _$UserTearOff {
+  const _$UserTearOff();
 
-  _UserRecord call(
-      {required String uid,
+  _User call(
+      {required String uuid,
       required String email,
       required bool emailVerified}) {
-    return _UserRecord(
-      uid: uid,
+    return _User(
+      uuid: uuid,
       email: email,
       emailVerified: emailVerified,
     );
   }
 
-  UserRecord fromJson(Map<String, Object> json) {
-    return UserRecord.fromJson(json);
+  User fromJson(Map<String, Object> json) {
+    return User.fromJson(json);
   }
 }
 
 /// @nodoc
-const $UserRecord = _$UserRecordTearOff();
+const $User = _$UserTearOff();
 
 /// @nodoc
-mixin _$UserRecord {
-  String get uid => throw _privateConstructorUsedError;
+mixin _$User {
+  String get uuid => throw _privateConstructorUsedError;
   String get email => throw _privateConstructorUsedError;
   bool get emailVerified => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $UserRecordCopyWith<UserRecord> get copyWith =>
-      throw _privateConstructorUsedError;
+  $UserCopyWith<User> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
-abstract class $UserRecordCopyWith<$Res> {
-  factory $UserRecordCopyWith(
-          UserRecord value, $Res Function(UserRecord) then) =
-      _$UserRecordCopyWithImpl<$Res>;
-  $Res call({String uid, String email, bool emailVerified});
+abstract class $UserCopyWith<$Res> {
+  factory $UserCopyWith(User value, $Res Function(User) then) =
+      _$UserCopyWithImpl<$Res>;
+  $Res call({String uuid, String email, bool emailVerified});
 }
 
 /// @nodoc
-class _$UserRecordCopyWithImpl<$Res> implements $UserRecordCopyWith<$Res> {
-  _$UserRecordCopyWithImpl(this._value, this._then);
+class _$UserCopyWithImpl<$Res> implements $UserCopyWith<$Res> {
+  _$UserCopyWithImpl(this._value, this._then);
 
-  final UserRecord _value;
+  final User _value;
   // ignore: unused_field
-  final $Res Function(UserRecord) _then;
+  final $Res Function(User) _then;
 
   @override
   $Res call({
-    Object? uid = freezed,
+    Object? uuid = freezed,
     Object? email = freezed,
     Object? emailVerified = freezed,
   }) {
     return _then(_value.copyWith(
-      uid: uid == freezed
-          ? _value.uid
-          : uid // ignore: cast_nullable_to_non_nullable
+      uuid: uuid == freezed
+          ? _value.uuid
+          : uuid // ignore: cast_nullable_to_non_nullable
               as String,
       email: email == freezed
           ? _value.email
@@ -92,34 +90,32 @@ class _$UserRecordCopyWithImpl<$Res> implements $UserRecordCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class _$UserRecordCopyWith<$Res> implements $UserRecordCopyWith<$Res> {
-  factory _$UserRecordCopyWith(
-          _UserRecord value, $Res Function(_UserRecord) then) =
-      __$UserRecordCopyWithImpl<$Res>;
+abstract class _$UserCopyWith<$Res> implements $UserCopyWith<$Res> {
+  factory _$UserCopyWith(_User value, $Res Function(_User) then) =
+      __$UserCopyWithImpl<$Res>;
   @override
-  $Res call({String uid, String email, bool emailVerified});
+  $Res call({String uuid, String email, bool emailVerified});
 }
 
 /// @nodoc
-class __$UserRecordCopyWithImpl<$Res> extends _$UserRecordCopyWithImpl<$Res>
-    implements _$UserRecordCopyWith<$Res> {
-  __$UserRecordCopyWithImpl(
-      _UserRecord _value, $Res Function(_UserRecord) _then)
-      : super(_value, (v) => _then(v as _UserRecord));
+class __$UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res>
+    implements _$UserCopyWith<$Res> {
+  __$UserCopyWithImpl(_User _value, $Res Function(_User) _then)
+      : super(_value, (v) => _then(v as _User));
 
   @override
-  _UserRecord get _value => super._value as _UserRecord;
+  _User get _value => super._value as _User;
 
   @override
   $Res call({
-    Object? uid = freezed,
+    Object? uuid = freezed,
     Object? email = freezed,
     Object? emailVerified = freezed,
   }) {
-    return _then(_UserRecord(
-      uid: uid == freezed
-          ? _value.uid
-          : uid // ignore: cast_nullable_to_non_nullable
+    return _then(_User(
+      uuid: uuid == freezed
+          ? _value.uuid
+          : uuid // ignore: cast_nullable_to_non_nullable
               as String,
       email: email == freezed
           ? _value.email
@@ -135,15 +131,14 @@ class __$UserRecordCopyWithImpl<$Res> extends _$UserRecordCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_UserRecord implements _UserRecord {
-  const _$_UserRecord(
-      {required this.uid, required this.email, required this.emailVerified});
+class _$_User implements _User {
+  const _$_User(
+      {required this.uuid, required this.email, required this.emailVerified});
 
-  factory _$_UserRecord.fromJson(Map<String, dynamic> json) =>
-      _$$_UserRecordFromJson(json);
+  factory _$_User.fromJson(Map<String, dynamic> json) => _$$_UserFromJson(json);
 
   @override
-  final String uid;
+  final String uuid;
   @override
   final String email;
   @override
@@ -151,15 +146,15 @@ class _$_UserRecord implements _UserRecord {
 
   @override
   String toString() {
-    return 'UserRecord(uid: $uid, email: $email, emailVerified: $emailVerified)';
+    return 'User(uuid: $uuid, email: $email, emailVerified: $emailVerified)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _UserRecord &&
-            (identical(other.uid, uid) ||
-                const DeepCollectionEquality().equals(other.uid, uid)) &&
+        (other is _User &&
+            (identical(other.uuid, uuid) ||
+                const DeepCollectionEquality().equals(other.uuid, uuid)) &&
             (identical(other.email, email) ||
                 const DeepCollectionEquality().equals(other.email, email)) &&
             (identical(other.emailVerified, emailVerified) ||
@@ -170,38 +165,36 @@ class _$_UserRecord implements _UserRecord {
   @override
   int get hashCode =>
       runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(uid) ^
+      const DeepCollectionEquality().hash(uuid) ^
       const DeepCollectionEquality().hash(email) ^
       const DeepCollectionEquality().hash(emailVerified);
 
   @JsonKey(ignore: true)
   @override
-  _$UserRecordCopyWith<_UserRecord> get copyWith =>
-      __$UserRecordCopyWithImpl<_UserRecord>(this, _$identity);
+  _$UserCopyWith<_User> get copyWith =>
+      __$UserCopyWithImpl<_User>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_UserRecordToJson(this);
+    return _$$_UserToJson(this);
   }
 }
 
-abstract class _UserRecord implements UserRecord {
-  const factory _UserRecord(
-      {required String uid,
+abstract class _User implements User {
+  const factory _User(
+      {required String uuid,
       required String email,
-      required bool emailVerified}) = _$_UserRecord;
+      required bool emailVerified}) = _$_User;
 
-  factory _UserRecord.fromJson(Map<String, dynamic> json) =
-      _$_UserRecord.fromJson;
+  factory _User.fromJson(Map<String, dynamic> json) = _$_User.fromJson;
 
   @override
-  String get uid => throw _privateConstructorUsedError;
+  String get uuid => throw _privateConstructorUsedError;
   @override
   String get email => throw _privateConstructorUsedError;
   @override
   bool get emailVerified => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$UserRecordCopyWith<_UserRecord> get copyWith =>
-      throw _privateConstructorUsedError;
+  _$UserCopyWith<_User> get copyWith => throw _privateConstructorUsedError;
 }

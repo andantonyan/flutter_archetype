@@ -73,7 +73,7 @@ class NavigationCubit extends Cubit<NavigationState> {
 }
 
 abstract class _NavigationState {
-  Future<NavigationState> authenticated(_NavigationStateContext context, UserRecord userRecord);
+  Future<NavigationState> authenticated(_NavigationStateContext context, User user);
 
   Future<NavigationState> unauthenticated(_NavigationStateContext context);
 
@@ -84,7 +84,7 @@ abstract class _NavigationState {
 
 class _DefaultState implements _NavigationState {
   @override
-  Future<NavigationState> authenticated(_NavigationStateContext context, UserRecord userRecord) async {
+  Future<NavigationState> authenticated(_NavigationStateContext context, User user) async {
     return const NavigationState.home();
   }
 
@@ -111,13 +111,13 @@ class _VerifyEmailState implements _NavigationState {
   String? _token;
 
   @override
-  Future<NavigationState> authenticated(_NavigationStateContext context, UserRecord userRecord) async {
+  Future<NavigationState> authenticated(_NavigationStateContext context, User user) async {
     if (_email != null && _token != null) {
       return context.verifyEmail(_token!, _email!);
     }
 
     context.setState(_DefaultState());
-    return context.authenticated(userRecord);
+    return context.authenticated(user);
   }
 
   @override
@@ -154,14 +154,14 @@ class _NavigationStateContext {
 
   bool get isAuthenticated => _authCubit.state.isAuthenticated;
 
-  UserRecord? get user => _authCubit.state.userRecord;
+  User? get user => _authCubit.state.user;
 
   _NavigationStateContext(_NavigationState state, AuthCubit authCubit)
       : _state = state,
         _authCubit = authCubit;
 
-  Future<NavigationState> authenticated(UserRecord userRecord) async {
-    return _state.authenticated(this, userRecord);
+  Future<NavigationState> authenticated(User user) async {
+    return _state.authenticated(this, user);
   }
 
   Future<NavigationState> unauthenticated() async {

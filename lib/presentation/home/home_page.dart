@@ -34,7 +34,7 @@ class __HomeViewState extends State<_HomeView> {
   @override
   Widget build(BuildContext context) {
     var textTheme = context.textTheme;
-    var userRecord = context.select((AuthCubit bloc) => bloc.state.userRecord);
+    var user = context.select((AuthCubit bloc) => bloc.state.user);
 
     return Scaffold(
       appBar: AppBar(
@@ -51,7 +51,7 @@ class __HomeViewState extends State<_HomeView> {
         mainAxisSize: MainAxisSize.min,
         children: <Widget>[
           Text(
-            'Welcome ${userRecord?.email}',
+            'Welcome ${user?.email}',
             style: textTheme.headline5,
             textAlign: TextAlign.center,
           ),

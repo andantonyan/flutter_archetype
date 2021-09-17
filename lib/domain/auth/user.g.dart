@@ -1,21 +1,19 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'user_record.dart';
+part of 'user.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_UserRecord _$$_UserRecordFromJson(Map<String, dynamic> json) =>
-    _$_UserRecord(
-      uid: json['uid'] as String,
+_$_User _$$_UserFromJson(Map<String, dynamic> json) => _$_User(
+      uuid: json['uuid'] as String,
       email: json['email'] as String,
       emailVerified: json['emailVerified'] as bool,
     );
 
-Map<String, dynamic> _$$_UserRecordToJson(_$_UserRecord instance) =>
-    <String, dynamic>{
-      'uid': instance.uid,
+Map<String, dynamic> _$$_UserToJson(_$_User instance) => <String, dynamic>{
+      'uuid': instance.uuid,
       'email': instance.email,
       'emailVerified': instance.emailVerified,
     };

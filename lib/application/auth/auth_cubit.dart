@@ -18,7 +18,7 @@ class AuthCubit extends Cubit<AuthState> {
   final _subscription = BehaviorSubject();
 
   AuthCubit(this._authRepository, this._storageService) : super(const AuthState.initial()) {
-    _authRepository.user.takeUntil(_subscription).listen(_userRecordChanged);
+    _authRepository.user.takeUntil(_subscription).listen(_userChanged);
   }
 
   @override
@@ -39,7 +39,7 @@ class AuthCubit extends Cubit<AuthState> {
 
   Future<void> logoutRequested() async {
     state.maybeWhen(
-      authenticated: (userRecord) async {
+      authenticated: (user) async {
         _logger.fine('Logout user..');
 
         await _authRepository.logout();
@@ -51,8 +51,8 @@ class AuthCubit extends Cubit<AuthState> {
     );
   }
 
-  Future<void> _userRecordChanged(UserRecord? userRecord) async {
-    if (userRecord == null) {
+  Future<void> _userChanged(User? user) async {
+    if (user == null) {
       await _storageService.deleteAuthToken();
 
       emit(const AuthState.unauthenticated());
@@ -65,7 +65,7 @@ class AuthCubit extends Cubit<AuthState> {
         await _storageService.saveAuthToken(token);
         _logger.info('Done saving auth token.');
 
-        emit(AuthState.authenticated(userRecord: userRecord));
+        emit(AuthState.authenticated(user: user));
       } catch (err, trace) {
         _logger.shout('Unable to authenticate user', err, trace);
         await logoutRequested();

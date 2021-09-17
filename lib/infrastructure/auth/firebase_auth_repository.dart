@@ -9,29 +9,32 @@ import '../core/core.dart';
 class FirebaseAuthRepository implements AuthRepository {
   static final _logger = Logger('FirebaseAuthRepository');
 
-  final _firebaseAuth = firebase_auth.FirebaseAuth.instance;
+  final firebase_auth.FirebaseAuth _firebaseAuth;
+
+  FirebaseAuthRepository({firebase_auth.FirebaseAuth? firebaseAuth})
+      : _firebaseAuth = firebaseAuth ?? firebase_auth.FirebaseAuth.instance;
 
   @override
-  Stream<UserRecord?> get user {
+  Stream<User?> get user {
     return _firebaseAuth.userChanges().map((firebaseUser) => firebaseUser?.toUser);
   }
 
   @override
-  Future<String> getToken([bool? forceRefresh = false]) async {
+  Future<String> getToken([bool forceRefresh = false]) async {
     try {
       _logger.finer('Getting auth token...');
-      var token = await _firebaseAuth.currentUser!.getIdToken(forceRefresh!);
+      var token = await _firebaseAuth.currentUser!.getIdToken(forceRefresh);
       _logger.fine('Done getting auth token.');
 
       return token;
-    } catch (err, trace) {
+    }  on Exception catch (err, trace) {
       _logger.severe('Unable to get auth token', err, trace);
-      rethrow;
+      throw err.toApp;
     }
   }
 
   @override
-  Future<UserRecord> registerWithEmailAndPassword(
+  Future<User> registerWithEmailAndPassword(
     final String email,
     final String password,
   ) async {
@@ -51,7 +54,7 @@ class FirebaseAuthRepository implements AuthRepository {
   }
 
   @override
-  Future<UserRecord> loginWithEmailAndPassword(final String email, final String password) async {
+  Future<User> loginWithEmailAndPassword(final String email, final String password) async {
     try {
       _logger.finer('Login user with email and password...');
       var response = await _firebaseAuth.signInWithEmailAndPassword(
@@ -92,9 +95,9 @@ class FirebaseAuthRepository implements AuthRepository {
 }
 
 extension on firebase_auth.User {
-  UserRecord get toUser {
-    return UserRecord(
-      uid: uid,
+  User get toUser {
+    return User(
+      uuid: uid,
       email: email!,
       emailVerified: emailVerified,
     );
