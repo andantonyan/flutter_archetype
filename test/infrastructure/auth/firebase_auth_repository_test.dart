@@ -23,6 +23,26 @@ void main() {
       authRepository = FirebaseAuthRepository(firebaseAuth: mockFirebaseAuth);
     });
 
+    group('user', () {
+      test('return user stream and convert UserRecord to User', () async {
+        when(mockUser.uid).thenAnswer((_) => 'test_uid');
+        when(mockUser.email).thenAnswer((_) => 'test_email');
+        when(mockUser.emailVerified).thenAnswer((_) => true);
+
+        when(mockFirebaseAuth.userChanges()).thenAnswer((_) => Stream.fromIterable([mockUser, null]));
+
+        var user = authRepository.user;
+
+        expect(
+          user,
+          emitsInOrder([
+            const User(uuid: 'test_uid', email: 'test_email', emailVerified: true),
+            null,
+          ]),
+        );
+      });
+    });
+
     group('getToken', () {
       test('return token if call completes successfully', () async {
         when(mockUser.getIdToken()).thenAnswer((_) async => 'token');
