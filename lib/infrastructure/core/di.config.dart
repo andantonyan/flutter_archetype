@@ -8,17 +8,19 @@ import 'package:firebase_auth/firebase_auth.dart' as _i10;
 import 'package:get_it/get_it.dart' as _i1;
 import 'package:injectable/injectable.dart' as _i2;
 
-import '../../application/auth/auth_cubit.dart' as _i23;
+import '../../application/auth/auth_cubit.dart' as _i25;
 import '../../application/auth/login_cubit.dart' as _i19;
-import '../../application/auth/register_cubit.dart' as _i21;
+import '../../application/auth/register_cubit.dart' as _i23;
 import '../../application/core/app_links_cubit.dart' as _i16;
 import '../../application/core/network_cubit.dart' as _i20;
-import '../../application/core/settings_cubit.dart' as _i22;
+import '../../application/core/settings_cubit.dart' as _i24;
 import '../../application/home/home_cubit.dart' as _i11;
 import '../../application/navigation/navigation_cubit.dart' as _i12;
 import '../../domain/domain.dart' as _i3;
 import '../auth/firebase_auth_repository.dart' as _i17;
-import '../auth/firebase_injectable_module.dart' as _i24;
+import '../auth/firebase_injectable_module.dart' as _i26;
+import '../post/post_client.dart' as _i21;
+import '../post/post_repository_impl.dart' as _i22;
 import 'dio_client.dart' as _i18;
 import 'external_app_service_impl.dart' as _i9;
 import 'firebase_analytics_service.dart' as _i4;
@@ -67,13 +69,16 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
   gh.factory<_i19.LoginCubit>(() => _i19.LoginCubit(get<_i3.AuthRepository>()));
   gh.factory<_i20.NetworkCubit>(
       () => _i20.NetworkCubit(get<_i3.NetworkInfoService>()));
-  gh.factory<_i21.RegisterCubit>(
-      () => _i21.RegisterCubit(get<_i3.AuthRepository>()));
-  gh.factory<_i22.SettingsCubit>(
-      () => _i22.SettingsCubit(get<_i3.StorageService>()));
-  gh.factory<_i23.AuthCubit>(() =>
-      _i23.AuthCubit(get<_i3.AuthRepository>(), get<_i3.StorageService>()));
+  gh.singleton<_i21.PostClient>(_i21.PostClient(get<_i18.DioClient>()));
+  gh.singleton<_i3.PostRepository>(
+      _i22.PostRepositoryImpl(get<_i21.PostClient>()));
+  gh.factory<_i23.RegisterCubit>(
+      () => _i23.RegisterCubit(get<_i3.AuthRepository>()));
+  gh.factory<_i24.SettingsCubit>(
+      () => _i24.SettingsCubit(get<_i3.StorageService>()));
+  gh.factory<_i25.AuthCubit>(() =>
+      _i25.AuthCubit(get<_i3.AuthRepository>(), get<_i3.StorageService>()));
   return get;
 }
 
-class _$FirebaseInjectableModule extends _i24.FirebaseInjectableModule {}
+class _$FirebaseInjectableModule extends _i26.FirebaseInjectableModule {}
