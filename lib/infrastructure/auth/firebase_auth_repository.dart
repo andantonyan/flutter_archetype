@@ -74,9 +74,9 @@ class FirebaseAuthRepository implements AuthRepository {
       _logger.finer('Reloading user...');
       await _firebaseAuth.currentUser!.reload();
       _logger.fine('Done reloading user.');
-    } catch (err, trace) {
+    } on Exception catch (err, trace) {
       _logger.severe('Unable to reload user', err, trace);
-      rethrow;
+      throw err.toApp;
     }
   }
 
@@ -86,9 +86,9 @@ class FirebaseAuthRepository implements AuthRepository {
       _logger.finer('Logout user...');
       await _firebaseAuth.signOut();
       _logger.fine('Done logout user.');
-    } catch (err, trace) {
+    } on Exception catch (err, trace) {
       _logger.severe('Unable to logout user', err, trace);
-      rethrow;
+      throw err.toApp;
     }
   }
 }

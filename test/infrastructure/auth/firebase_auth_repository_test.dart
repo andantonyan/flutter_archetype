@@ -12,26 +12,25 @@ void main() {
   group('FirebaseAuthRepository', () {
     late MockFirebaseAuth mockFirebaseAuth;
     late FirebaseAuthRepository authRepository;
+    late MockUser mockUser;
+    late MockUserCredential mockUserCredential;
 
     setUp(() {
       mockFirebaseAuth = MockFirebaseAuth();
       authRepository = FirebaseAuthRepository(mockFirebaseAuth);
+      mockUser = MockUser();
+      mockUserCredential = MockUserCredential();
+
+      when(mockUser.uid).thenReturn('test_uid');
+      when(mockUser.email).thenReturn('test_email');
+      when(mockUser.emailVerified).thenReturn(true);
+
+      when(mockFirebaseAuth.currentUser).thenAnswer((_) => mockUser);
+      when(mockUserCredential.user).thenAnswer((_) => mockUser);
     });
 
     group('user', () {
-      late MockUser mockUser;
-
-      setUp(() {
-        mockUser = MockUser();
-
-        when(mockFirebaseAuth.currentUser).thenAnswer((_) => mockUser);
-      });
-
       test('return user stream and convert UserRecord to User', () async {
-        when(mockUser.uid).thenAnswer((_) => 'test_uid');
-        when(mockUser.email).thenAnswer((_) => 'test_email');
-        when(mockUser.emailVerified).thenAnswer((_) => true);
-
         when(mockFirebaseAuth.userChanges()).thenAnswer((_) => Stream.fromIterable([mockUser, null]));
 
         var user = authRepository.user;
@@ -47,14 +46,6 @@ void main() {
     });
 
     group('getToken', () {
-      late MockUser mockUser;
-
-      setUp(() {
-        mockUser = MockUser();
-
-        when(mockFirebaseAuth.currentUser).thenAnswer((_) => mockUser);
-      });
-
       test('return token if call completes successfully', () async {
         when(mockUser.getIdToken()).thenAnswer((_) async => 'token');
 
@@ -72,20 +63,7 @@ void main() {
     });
 
     group('registerWithEmailAndPassword', () {
-      late MockUserCredential mockUserCredential;
-      late MockUser mockUser;
-
-      setUp(() {
-        mockUser = MockUser();
-        mockUserCredential = MockUserCredential();
-      });
-
       test('register user with email and password, and return User', () async {
-        when(mockUser.uid).thenAnswer((_) => 'test_uid');
-        when(mockUser.email).thenAnswer((_) => 'test_email');
-        when(mockUser.emailVerified).thenAnswer((_) => true);
-
-        when(mockUserCredential.user).thenAnswer((_) => mockUser);
         when(mockFirebaseAuth.createUserWithEmailAndPassword(email: 'test_email', password: 'test_password'))
             .thenAnswer(
           (_) async => mockUserCredential,
@@ -122,20 +100,7 @@ void main() {
     });
 
     group('loginWithEmailAndPassword', () {
-      late MockUserCredential mockUserCredential;
-      late MockUser mockUser;
-
-      setUp(() {
-        mockUser = MockUser();
-        mockUserCredential = MockUserCredential();
-      });
-
       test('login user with email and password', () async {
-        when(mockUser.uid).thenAnswer((_) => 'test_uid');
-        when(mockUser.email).thenAnswer((_) => 'test_email');
-        when(mockUser.emailVerified).thenAnswer((_) => true);
-
-        when(mockUserCredential.user).thenAnswer((_) => mockUser);
         when(mockFirebaseAuth.signInWithEmailAndPassword(email: 'test_email', password: 'test_password')).thenAnswer(
           (_) async => mockUserCredential,
         );
@@ -167,6 +132,36 @@ void main() {
           () async => await authRepository.loginWithEmailAndPassword('test_email', 'test_password'),
           throwsA(isA<AuthUserNotFoundException>()),
         );
+      });
+    });
+
+    group('reload', () {
+      test('reload current user', () async {
+        await authRepository.reload();
+
+        verify(mockUser.reload()).called(1);
+      });
+
+      test('throws an exception if reload completes with an error', () async {
+        var throwable = firebase_auth.FirebaseAuthException(code: 'error');
+        when(mockUser.reload()).thenThrow(throwable);
+
+        expect(() async => await authRepository.reload(), throwsA(isA<AppException>()));
+      });
+    });
+
+    group('logout', () {
+      test('sign out current user', () async {
+        await authRepository.logout();
+
+        verify(mockFirebaseAuth.signOut()).called(1);
+      });
+
+      test('throws an exception if logout completes with an error', () async {
+        var throwable = firebase_auth.FirebaseAuthException(code: 'error');
+        when(mockFirebaseAuth.signOut()).thenThrow(throwable);
+
+        expect(() async => await authRepository.logout(), throwsA(isA<AppException>()));
       });
     });
   });
