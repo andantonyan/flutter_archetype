@@ -14,7 +14,6 @@ import 'di.env.dart';
 class SecureStorageServiceImpl implements StorageService {
   static const _storage = FlutterSecureStorage();
   static const _defaultLocale = Locale('en');
-  static const _introScreenStorageKey = 'is_intro_screen_disabled';
   static const _authTokenStorageKey = 'auth_token';
   static const _selectedLocaleStorageKey = 'selected_locale';
   static final _logger = Logger('SecureStorageServiceImpl');
@@ -30,17 +29,6 @@ class SecureStorageServiceImpl implements StorageService {
       _logger.severe('Unable to read data from flutter secure storage', err, trace);
       await _storage.deleteAll();
     }
-  }
-
-  @override
-  Future<bool> canShowIntroScreen() async {
-    var value = await _storage.read(key: _introScreenStorageKey);
-    return value != 'true';
-  }
-
-  @override
-  Future<void> disableIntroScreen() {
-    return _storage.write(key: _introScreenStorageKey, value: 'true');
   }
 
   @override
