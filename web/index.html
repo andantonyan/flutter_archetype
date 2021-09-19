@@ -97,5 +97,27 @@
       loadMainDartJs();
     }
   </script>
+
+  <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-analytics.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-storage.js"></script>
+
+  <script>
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    var firebaseConfig = {
+      apiKey: "AIzaSyARWjhay_8-a7q2bP5ryXZ78pETBuXjOqw",
+      authDomain: "flutter-archetype.firebaseapp.com",
+      projectId: "flutter-archetype",
+      storageBucket: "flutter-archetype.appspot.com",
+      messagingSenderId: "202104834121",
+      appId: "1:202104834121:web:9580ba150d6ecb7db8d798"
+    };
+
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+  </script>
 </body>
 </html>
