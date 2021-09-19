@@ -8,7 +8,7 @@ import 'application/application.dart';
 import 'infrastructure/infrastructure.dart';
 import 'presentation/presentation.dart';
 
-void main() async {
+Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   await Firebase.initializeApp();
