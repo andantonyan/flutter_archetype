@@ -86,7 +86,7 @@ void main() {
         );
       });
 
-      test('throws an `AppException.authEmailAlreadyInUse` when error code `email-already-in-use`', () async {
+      test('throws an [AppException.authEmailAlreadyInUse] when error code [email-already-in-use]', () async {
         var throwable = firebase_auth.FirebaseAuthException(code: 'email-already-in-use');
         when(mockFirebaseAuth.createUserWithEmailAndPassword(email: 'test_email', password: 'test_password')).thenThrow(
           throwable,
@@ -122,7 +122,7 @@ void main() {
         );
       });
 
-      test('throws an `AppException.authUserNotFound` when error code `user-not-found`', () async {
+      test('throws an [AppException.authUserNotFound] when error code [user-not-found]', () async {
         var throwable = firebase_auth.FirebaseAuthException(code: 'user-not-found');
         when(mockFirebaseAuth.signInWithEmailAndPassword(email: 'test_email', password: 'test_password')).thenThrow(
           throwable,

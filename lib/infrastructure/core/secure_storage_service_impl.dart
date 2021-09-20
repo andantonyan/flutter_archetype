@@ -1,24 +1,26 @@
 import 'dart:ui';
 
 import 'package:flutter/services.dart';
+import 'package:flutter_archetype/domain/domain.dart';
+import 'package:flutter_archetype/l10n/l10n.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:injectable/injectable.dart';
 import 'package:logging/logging.dart';
-import 'package:flutter_archetype/domain/domain.dart';
-import 'package:flutter_archetype/l10n/l10n.dart';
 
 import 'di.env.dart';
 
 @mobile
 @LazySingleton(as: StorageService)
 class SecureStorageServiceImpl implements StorageService {
-  static const _storage = FlutterSecureStorage();
   static const _defaultLocale = Locale('en');
   static const _authTokenStorageKey = 'auth_token';
   static const _selectedLocaleStorageKey = 'selected_locale';
   static final _logger = Logger('SecureStorageServiceImpl');
 
+  final FlutterSecureStorage _storage;
   String? _authToken;
+
+  SecureStorageServiceImpl(this._storage);
 
   @override
   Future<void> init() async {

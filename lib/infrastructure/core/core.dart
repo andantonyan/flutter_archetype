@@ -1,5 +1,6 @@
 export 'app_exception_mapper.dart';
 export 'config.dart';
+export 'core_injectable_module.dart';
 export 'di.dart';
 export 'di.env.dart';
 export 'dio_client.dart';
