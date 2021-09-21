@@ -51,6 +51,7 @@ dependencies:
   firebase_dynamic_links: ^2.0.9
   flutter_platform_widgets: ^1.9.5
   flutter_bloc: ^7.3.0
+  hydrated_bloc: ^7.1.0
   get_it: ^7.2.0
   injectable: ^1.5.0
   url_launcher: ^6.0.3
