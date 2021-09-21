@@ -6,7 +6,6 @@ import 'package:logging/logging.dart';
 import 'package:rxdart/rxdart.dart';
 
 part 'auth_cubit.freezed.dart';
-
 part 'auth_state.dart';
 
 @injectable
