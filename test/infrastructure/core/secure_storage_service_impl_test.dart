@@ -11,7 +11,7 @@ import 'secure_storage_service_impl_test.mocks.dart';
 @GenerateMocks([FlutterSecureStorage])
 void main() {
   group('SecureStorageServiceImpl', () {
-    late FlutterSecureStorage mockSecureStorage;
+    late MockFlutterSecureStorage mockSecureStorage;
     late StorageService storageService;
 
     setUp(() {
@@ -45,8 +45,7 @@ void main() {
       test('save token in db', () async {
         await storageService.saveAuthToken('token');
 
-        // TODO: use argument matcher
-        verify(mockSecureStorage.write(key: 'auth_token', value: 'token')).called(1);
+        verify(mockSecureStorage.write(key: anyNamed('key'), value: anyNamed('value'))).called(1);
         verifyNoMoreInteractions(mockSecureStorage);
       });
     });
@@ -55,8 +54,7 @@ void main() {
       test('delete token from db', () async {
         await storageService.deleteAuthToken();
 
-        // TODO: use argument matcher
-        verify(mockSecureStorage.delete(key: 'auth_token')).called(1);
+        verify(mockSecureStorage.delete(key: anyNamed('key'))).called(1);
         verifyNoMoreInteractions(mockSecureStorage);
       });
     });
