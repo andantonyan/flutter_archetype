@@ -40,7 +40,7 @@ class AuthCubit extends Cubit<AuthState> {
     try {
       await _authRepository.logout();
       await _storageService.deleteAuthToken();
-    } catch (err, trace) {
+    } on Exception catch (err, trace) {
       _logger.warning('Unable to clean user session', err, trace);
     } finally {
       emit(const AuthState.unauthenticated());

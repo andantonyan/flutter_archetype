@@ -89,5 +89,76 @@ void main() {
         },
       );
     });
+
+    group('userReloadRequested', () {
+      blocTest<AuthCubit, AuthState>(
+        'ask authRepository to reload user',
+        build: () => authCubit,
+        seed: () => AuthState.authenticated(user: user),
+        act: (cubit) => cubit.userReloadRequested(),
+        expect: () => [],
+        verify: (bloc) {
+          verify(authRepository.reload()).called(1);
+        },
+      );
+
+      blocTest<AuthCubit, AuthState>(
+        'keep current state when reload() throws',
+        build: () {
+          when(authRepository.reload()).thenThrow(Exception());
+          return authCubit;
+        },
+        seed: () => AuthState.authenticated(user: user),
+        act: (cubit) => cubit.userReloadRequested(),
+        expect: () => [],
+        verify: (bloc) {
+          verify(authRepository.reload()).called(1);
+        },
+      );
+    });
+
+    group('logoutRequested', () {
+      blocTest<AuthCubit, AuthState>(
+        'emit [Unauthenticated] and logout user',
+        build: () => authCubit,
+        seed: () => AuthState.authenticated(user: user),
+        act: (cubit) => cubit.logoutRequested(),
+        expect: () => [const AuthState.unauthenticated()],
+        verify: (bloc) {
+          verify(authRepository.logout()).called(1);
+          verify(storageService.deleteAuthToken()).called(1);
+        },
+      );
+
+      blocTest<AuthCubit, AuthState>(
+        'emit [Unauthenticated] when logout() throws',
+        build: () {
+          when(authRepository.logout()).thenThrow(Exception());
+          return authCubit;
+        },
+        seed: () => AuthState.authenticated(user: user),
+        act: (cubit) => cubit.logoutRequested(),
+        expect: () => [const AuthState.unauthenticated()],
+        verify: (bloc) {
+          verify(authRepository.logout()).called(1);
+          verifyNever(storageService.deleteAuthToken());
+        },
+      );
+
+      blocTest<AuthCubit, AuthState>(
+        'emit [Unauthenticated] when deleteAuthToken() throws',
+        build: () {
+          when(storageService.deleteAuthToken()).thenThrow(Exception());
+          return authCubit;
+        },
+        seed: () => AuthState.authenticated(user: user),
+        act: (cubit) => cubit.logoutRequested(),
+        expect: () => [const AuthState.unauthenticated()],
+        verify: (bloc) {
+          verify(authRepository.logout()).called(1);
+          verify(storageService.deleteAuthToken()).called(1);
+        },
+      );
+    });
   });
 }
