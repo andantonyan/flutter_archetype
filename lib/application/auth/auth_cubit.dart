@@ -37,17 +37,14 @@ class AuthCubit extends Cubit<AuthState> {
   }
 
   Future<void> logoutRequested() async {
-    state.maybeWhen(
-      authenticated: (user) async {
-        _logger.fine('Logout user..');
-
-        await _authRepository.logout();
-        await _storageService.deleteAuthToken();
-
-        _logger.info('Done logout user.');
-      },
-      orElse: () => _logger.warning('Invalid state, ignoring.'),
-    );
+    try {
+      await _authRepository.logout();
+      await _storageService.deleteAuthToken();
+    } catch (err, trace) {
+      _logger.warning('Unable to clean user session', err, trace);
+    } finally {
+      emit(const AuthState.unauthenticated());
+    }
   }
 
   Future<void> _userChanged(User? user) async {

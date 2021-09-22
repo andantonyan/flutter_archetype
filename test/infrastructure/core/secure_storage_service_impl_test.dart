@@ -1,5 +1,4 @@
 import 'package:flutter/services.dart';
-import 'package:flutter_archetype/domain/domain.dart';
 import 'package:flutter_archetype/infrastructure/infrastructure.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -11,33 +10,32 @@ import 'secure_storage_service_impl_test.mocks.dart';
 @GenerateMocks([FlutterSecureStorage])
 void main() {
   group('SecureStorageServiceImpl', () {
-    late MockFlutterSecureStorage mockSecureStorage;
-    late StorageService storageService;
+    late MockFlutterSecureStorage secureStorage;
+    late SecureStorageServiceImpl storageService;
 
     setUp(() {
-      mockSecureStorage = MockFlutterSecureStorage();
-      storageService = SecureStorageServiceImpl(mockSecureStorage);
+      secureStorage = MockFlutterSecureStorage();
+      storageService = SecureStorageServiceImpl(secureStorage);
     });
 
     group('init', () {
       test('try to read storage data', () async {
-        when(mockSecureStorage.readAll()).thenAnswer((_) async => {});
+        when(secureStorage.readAll()).thenAnswer((_) async => {});
 
         await storageService.init();
 
-        verify(mockSecureStorage.readAll()).called(1);
-        verifyNoMoreInteractions(mockSecureStorage);
+        verify(secureStorage.readAll()).called(1);
+        verifyNoMoreInteractions(secureStorage);
       });
 
       test('wipe storage data on [PlatformException]', () async {
-        when(mockSecureStorage.readAll()).thenThrow(PlatformException(code: 'code'));
-        when(mockSecureStorage.deleteAll());
+        when(secureStorage.readAll()).thenThrow(PlatformException(code: 'code'));
 
         await storageService.init();
 
-        verify(mockSecureStorage.readAll()).called(1);
-        verify(mockSecureStorage.deleteAll()).called(1);
-        verifyNoMoreInteractions(mockSecureStorage);
+        verify(secureStorage.readAll()).called(1);
+        verify(secureStorage.deleteAll()).called(1);
+        verifyNoMoreInteractions(secureStorage);
       });
     });
 
@@ -45,8 +43,8 @@ void main() {
       test('save token in db', () async {
         await storageService.saveAuthToken('token');
 
-        verify(mockSecureStorage.write(key: anyNamed('key'), value: anyNamed('value'))).called(1);
-        verifyNoMoreInteractions(mockSecureStorage);
+        verify(secureStorage.write(key: anyNamed('key'), value: anyNamed('value'))).called(1);
+        verifyNoMoreInteractions(secureStorage);
       });
     });
 
@@ -54,8 +52,8 @@ void main() {
       test('delete token from db', () async {
         await storageService.deleteAuthToken();
 
-        verify(mockSecureStorage.delete(key: anyNamed('key'))).called(1);
-        verifyNoMoreInteractions(mockSecureStorage);
+        verify(secureStorage.delete(key: anyNamed('key'))).called(1);
+        verifyNoMoreInteractions(secureStorage);
       });
     });
   });
