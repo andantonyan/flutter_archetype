@@ -9,8 +9,6 @@ enum AuthModelValidationError {
   invalidEmailAddress,
   emptyPassword,
   invalidPassword,
-  emptyBirthday,
-  invalidBirthday,
 }
 
 class EmailAddress extends FormzInput<String, AuthModelValidationError> {
