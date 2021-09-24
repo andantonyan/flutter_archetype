@@ -43,8 +43,12 @@ class FirebaseDynamicLinksService implements AppLinksService {
 
     _logger.finer('Initializing firebase dynamic link service...');
 
-    var initialLink = await _linksService.getInitialLink();
-    _controller.add(_mapLinkDataToAppLinkData(initialLink));
+    try {
+      var initialLink = await _linksService.getInitialLink();
+      _controller.add(_mapLinkDataToAppLinkData(initialLink));
+    }  on Exception catch (err, trace) {
+      _logger.severe('Unable to get initial link', err, trace);
+    }
 
     _linksService.onLink(
       onSuccess: (linkData) async => _controller.add(_mapLinkDataToAppLinkData(linkData)),
