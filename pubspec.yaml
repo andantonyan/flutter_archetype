@@ -38,10 +38,10 @@ dependencies:
   ansicolor: ^2.0.1
   dartz: ^0.10.0
   formz: ^0.4.0
-  freezed_annotation: ^0.14.3
-  json_annotation: ^4.1.0
-  dio: ^4.0.0
-  retrofit: ^2.0.1
+  freezed_annotation: ^2.2.0
+  json_annotation: ^4.7.0
+  dio: ^5.0.3
+  retrofit: ^4.0.1
   flutter_secure_storage: ^4.2.1
   firebase_core: ^1.6.0
   firebase_auth: ^3.1.1
@@ -53,7 +53,7 @@ dependencies:
   flutter_bloc: ^7.3.0
   hydrated_bloc: ^7.1.0
   get_it: ^7.2.0
-  injectable: ^1.5.0
+  injectable: ^2.1.0
   url_launcher: ^6.0.3
   android_intent_plus: ^2.0.0
   rxdart: ^0.27.2
@@ -74,13 +74,13 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^1.0.4
-  build_runner: ^2.1.2
-  json_serializable: ^5.0.2
-  freezed: ^0.14.5
-  injectable_generator: ^1.5.2
-  retrofit_generator: ^2.0.1+1
+  build_runner: ^2.1.11
+  json_serializable: ^6.5.4
+  freezed: ^2.1.0+1
+  injectable_generator: ^2.1.4
+  retrofit_generator: ^5.0.0+1
   bloc_test: ^8.2.0
-  mockito: ^5.0.16
+  mockito: ^5.3.2
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
